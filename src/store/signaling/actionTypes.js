@@ -1,0 +1,7 @@
+export const INIT = 'peer-chat/signaling/init'
+export const INIT_SUCCESS = 'peer-chat/signaling/init-success'
+export const INIT_FAILED = 'peer-chat/signaling/init-failed'
+export const SEND_SIGNAL = 'peer-chat/signaling/send-signal'
+export const SEND_SIGNAL_SUCCESS = 'peer-chat/signaling/send-signal-success'
+export const SEND_SIGNAL_ERROR = 'peer-chat/signaling/send-signal-error'
+export const GOT_REMOTE_SIGNAL = 'peer-chat/signaling/got-remote-signal'
