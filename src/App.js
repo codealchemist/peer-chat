@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
@@ -8,6 +8,7 @@ import WelcomePage from './pages/WelcomePage'
 import ChatPage from './pages/ChatPage'
 import store from './store'
 import Background from 'components/Background'
+import Header from 'components/Header'
 
 const theme = createMuiTheme({
   typography: {
@@ -18,16 +19,27 @@ const theme = createMuiTheme({
   }
 })
 
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+
 const App = () => (
   <MuiThemeProvider theme={theme}>
     <Provider store={store}>
       <Background />
-      <Router>
-        <>
-          <Route path="/" exact component={WelcomePage} />
-          <Route path="/chat" component={ChatPage} />
-        </>
-      </Router>
+
+      <Wrapper>
+        <Header />
+
+        <Router>
+          <>
+            <Route path="/" exact component={WelcomePage} />
+            <Route path="/chat" component={ChatPage} />
+          </>
+        </Router>
+      </Wrapper>
     </Provider>
   </MuiThemeProvider>
 )

@@ -1,7 +1,8 @@
 import { eventChannel } from 'redux-saga'
 import { put, takeEvery, take, select } from 'redux-saga/effects'
-import { CREATE } from './actionTypes'
 import { INIT_SUCCESS, GOT_REMOTE_SIGNAL } from 'store/signaling/actionTypes'
+import { SEND_MESSAGE } from 'store/chat/actionTypes'
+import { addMessage } from 'store/chat/actions'
 import { getPeer, getSignal } from './selectors'
 import {
   add,
@@ -22,7 +23,6 @@ export function getRemotePeerEventChannel (remotePeer) {
         emitter({ type: 'signal', data: signal })
       })
       .onData(data => {
-        console.log('Got DATA from Peer:', data)
         emitter({ type: 'data', data })
       })
       .onConnect(() => {
@@ -37,6 +37,26 @@ export function getRemotePeerEventChannel (remotePeer) {
       console.log('Channel unsubscribe.')
     }
   })
+}
+
+function * handleRemotePeerData ({ data }) {
+  const { payload } = JSON.parse(data)
+  console.log('handle remote peer data', payload)
+
+  try {
+    switch (payload.type) {
+      case 'message':
+        console.log('-- MESSAGE', payload.data)
+        const message = {
+          ...payload.data,
+          type: 'peer'
+        }
+        yield put(addMessage(message))
+        break
+    }
+  } catch (e) {
+    console.log('Error adding message', e)
+  }
 }
 
 export function * createRemotePeer ({ payload }) {
@@ -68,7 +88,7 @@ export function * createRemotePeer ({ payload }) {
             console.log('Peer connected!')
             break
           case 'data':
-            console.log('got data from remotePeer event channel', data)
+            yield handleRemotePeerData({ type, data })
             break
           case 'error':
             console.log('got error from remotePeer event channel', data)
@@ -131,7 +151,6 @@ export function * createLocalPeer ({ payload }) {
             yield put(setSignal(data)) // {signal, id}
             break
           case 'data':
-            console.log('got data from localPeer event channel', data)
             break
           case 'error':
             console.log('got error from localPeer event channel', data)
@@ -146,8 +165,18 @@ export function * createLocalPeer ({ payload }) {
   }
 }
 
+export function * sendMessage ({ payload }) {
+  console.log('PEER Saga: send message', payload)
+  const peer = yield select(getPeer)
+  peer.send({
+    type: 'message',
+    data: { ...payload }
+  })
+}
+
 export default function * signalingSagas () {
   console.log('peers saga')
   yield takeEvery(INIT_SUCCESS, createLocalPeer)
   yield takeEvery(GOT_REMOTE_SIGNAL, createRemotePeer)
+  yield takeEvery(SEND_MESSAGE, sendMessage)
 }

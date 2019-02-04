@@ -1,12 +1,15 @@
-import { ADD_MESSAGE } from './actionTypes'
+import { ADD_MESSAGE, SEND_MESSAGE } from './actionTypes'
 
 const defaultState = {
   messages: []
 }
 
 const handlers = {
+  [SEND_MESSAGE]: (state, { payload }) => ({
+    messages: state.messages.concat([payload])
+  }),
   [ADD_MESSAGE]: (state, { payload }) => ({
-    messages: state.messages.concat([payload.message])
+    messages: state.messages.concat([payload])
   })
 }
 

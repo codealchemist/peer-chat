@@ -1,5 +1,6 @@
 import React from 'react'
+import Chat from 'components/Chat'
 
-const ChatPage = () => <div>Chat Page</div>
+const ChatPage = () => <Chat />
 
 export default ChatPage

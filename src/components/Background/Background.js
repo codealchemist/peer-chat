@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 export const getImage = () => {
-  const min = 0
+  const min = 1
   const max = 33
   const i = Math.floor(Math.random() * (max - min + 1)) + min
   const image = require(`./background${i}.jpg`)

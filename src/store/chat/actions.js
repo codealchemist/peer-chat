@@ -5,12 +5,14 @@ import {
   SEND_MESSAGE_FAILED
 } from './actionTypes'
 
-export const addMessage = () => ({
-  type: ADD_MESSAGE
+export const addMessage = payload => ({
+  type: ADD_MESSAGE,
+  payload
 })
 
-export const sendMessage = () => ({
-  type: SEND_MESSAGE
+export const sendMessage = payload => ({
+  type: SEND_MESSAGE,
+  payload
 })
 
 export const sendMessageSuccess = () => ({
