@@ -4,6 +4,9 @@ import styled from 'styled-components'
 import Typography from '@material-ui/core/Typography'
 import Avatar from 'components/Avatar'
 
+const initiatorBackgroundColor = 'rgba(150, 150, 150, 0.2)'
+const peerBackgroundColor = 'rgba(150, 150, 255, 0.2)'
+
 const Wrapper = styled.div`
   display: flex;
   flex-direction: row-reverse;
@@ -57,13 +60,13 @@ const Date = styled.div`
 
 const Text = styled.div`
   width: 50%;
-  background: rgba(150, 150, 150, 0.2);
+  background: ${initiatorBackgroundColor};
   color: #eee;
   padding: 20px 10px 5px 10px;
   border-radius: 5px;
   min-width: 220px;
   position: relative;
-  overflow: hidden;
+  word-break: break-word;
 
   > p {
     word-break: break-word;
@@ -75,7 +78,8 @@ const Text = styled.div`
     height: 0;
     border-style: solid;
     border-width: 5px 0 5px 7px;
-    border-color: transparent transparent transparent rgba(150, 150, 150, 0.2);
+    border-color: transparent transparent transparent
+      ${initiatorBackgroundColor};
     position: absolute;
     top: 9px;
     right: -7px;
@@ -84,7 +88,7 @@ const Text = styled.div`
     if (type === 'peer') {
       return `
           border-width: 5px 7px 5px 0;
-          border-color: transparent rgba(150, 150, 255, 0.2) transparent transparent;
+          border-color: transparent ${peerBackgroundColor} transparent transparent;
           left: -7px;
         `
     }
@@ -100,7 +104,7 @@ const Text = styled.div`
   ${({ type }) => {
     if (type === 'peer') {
       return `
-        background: rgba(150, 150, 255, 0.2);
+        background: ${peerBackgroundColor};
       `
     }
 
