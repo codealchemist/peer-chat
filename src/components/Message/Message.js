@@ -63,6 +63,11 @@ const Text = styled.div`
   border-radius: 5px;
   min-width: 220px;
   position: relative;
+  overflow: hidden;
+
+  > p {
+    word-break: break-word;
+  }
 
   :before {
     content: '';
@@ -130,7 +135,7 @@ const Message = ({ user, text, date, type = 'own' }) => (
         <Typography>
           <b>{user.name}</b>
         </Typography>
-        <Typography>{text}</Typography>
+        <span>{text}</span>
       </Text>
     </Content>
   </Wrapper>

@@ -1,8 +1,16 @@
 import { eventChannel } from 'redux-saga'
 import { put, takeEvery, take, select } from 'redux-saga/effects'
 import { INIT_SUCCESS, GOT_REMOTE_SIGNAL } from 'store/signaling/actionTypes'
-import { SEND_MESSAGE } from 'store/chat/actionTypes'
-import { addMessage } from 'store/chat/actions'
+import {
+  SEND_MESSAGE,
+  SEND_WRITING_NOTIFICATION,
+  SEND_CLEAR_WRITING_NOTIFICATION
+} from 'store/chat/actionTypes'
+import {
+  addMessage,
+  addWritingNotification,
+  removeWritingNotification
+} from 'store/chat/actions'
 import { getPeer, getSignal } from './selectors'
 import {
   add,
@@ -52,6 +60,16 @@ function * handleRemotePeerData ({ data }) {
           type: 'peer'
         }
         yield put(addMessage(message))
+        break
+
+      case 'writing_notification':
+        console.log('-- WRITING NOTIFICATION', payload.data)
+        yield put(addWritingNotification(payload.data))
+        break
+
+      case 'clear_writing_notification':
+        console.log('-- CLEAR WRITING NOTIFICATION', payload.data)
+        yield put(removeWritingNotification(payload.data))
         break
     }
   } catch (e) {
@@ -174,9 +192,29 @@ export function * sendMessage ({ payload }) {
   })
 }
 
+export function * sendWritingNotification ({ payload }) {
+  console.log('PEER Saga: send writing notification', payload)
+  const peer = yield select(getPeer)
+  peer.send({
+    type: 'writing_notification',
+    data: { user: payload, date: new Date() }
+  })
+}
+
+export function * sendClearWritingNotification ({ payload }) {
+  console.log('PEER Saga: send clear writing notification', payload)
+  const peer = yield select(getPeer)
+  peer.send({
+    type: 'clear_writing_notification',
+    data: { user: payload, date: new Date() }
+  })
+}
+
 export default function * signalingSagas () {
   console.log('peers saga')
   yield takeEvery(INIT_SUCCESS, createLocalPeer)
   yield takeEvery(GOT_REMOTE_SIGNAL, createRemotePeer)
   yield takeEvery(SEND_MESSAGE, sendMessage)
+  yield takeEvery(SEND_WRITING_NOTIFICATION, sendWritingNotification)
+  yield takeEvery(SEND_CLEAR_WRITING_NOTIFICATION, sendClearWritingNotification)
 }

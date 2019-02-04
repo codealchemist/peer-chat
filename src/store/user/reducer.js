@@ -1,4 +1,4 @@
-import { SET_NAME, SET_AVATAR } from './actionTypes'
+import { SET_NAME, SET_AVATAR, SET_ID } from './actionTypes'
 
 const defaultState = {
   name: '',
@@ -13,6 +13,10 @@ const handlers = {
   [SET_AVATAR]: (state, { payload }) => ({
     ...state,
     avatar: payload.avatar
+  }),
+  [SET_ID]: (state, { payload }) => ({
+    ...state,
+    id: payload.id
   })
 }
 

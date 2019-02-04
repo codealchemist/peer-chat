@@ -1,7 +1,8 @@
 import React from 'react'
+import nanoid from 'nanoid'
 import { compose } from 'redux'
 import { connect } from 'react-redux'
-import { setName } from 'store/user/actions'
+import { setName, setId as setUserId } from 'store/user/actions'
 import { withRouter } from 'react-router-dom'
 import styled from 'styled-components'
 import Card from '@material-ui/core/Card'
@@ -56,13 +57,18 @@ const styles = {
 }
 
 class Welcome extends React.PureComponent {
+  userId = nanoid(12)
   state = {
     name: '',
     openingChat: false
   }
 
+  componentDidMount() {
+    this.props.setUserId({ id: this.userId })
+  }
+
   onNameChange = ({ target: { value } }) => {
-    this.setState({ name: value })
+    this.setState({ name: value.trim() })
   }
 
   createChat = () => {
@@ -70,6 +76,11 @@ class Welcome extends React.PureComponent {
     this.setState({ openingChat: true })
     this.props.setName({ name: this.state.name })
     this.props.history.push('/chat')
+  }
+
+  onKey = ({ key }) => {
+    if (key !== 'Enter' || !this.state.name) return
+    this.createChat()
   }
 
   render() {
@@ -95,6 +106,7 @@ class Welcome extends React.PureComponent {
               onChange={this.onNameChange}
               margin="normal"
               variant="outlined"
+              onKeyPress={this.onKey}
               autoFocus
             />
             <div className={classes.buttonContainer}>
@@ -120,7 +132,7 @@ class Welcome extends React.PureComponent {
   }
 }
 
-const mapActionsToProps = { setName }
+const mapActionsToProps = { setName, setUserId }
 
 export default compose(
   withStyles(styles),

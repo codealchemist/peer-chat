@@ -1,7 +1,6 @@
 import React from 'react'
 import moment from 'moment'
 import styled from 'styled-components'
-import Typography from '@material-ui/core/Typography'
 
 const Wrapper = styled.div`
   display: flex;
@@ -40,6 +39,8 @@ const Text = styled.div`
   border-radius: 2px;
   min-width: 220px;
   position: relative;
+  display: flex;
+  justify-content: space-between;
 
   > p {
     color: #222;
@@ -78,7 +79,13 @@ const Text = styled.div`
   }
 `
 
-const Notification = ({ text, date }) => (
+const ActionButtonWrapper = styled.div`
+  position: absolute;
+  top: 2px;
+  right: 0px;
+`
+
+const Notification = ({ text, date, actionButton = '' }) => (
   <Wrapper>
     <Content>
       <Text>
@@ -86,6 +93,7 @@ const Notification = ({ text, date }) => (
           <p>{moment(date).format('MMMM Do YYYY, h:mm:ss a')}</p>
         </Date>
         <p>{text}</p>
+        <ActionButtonWrapper>{actionButton}</ActionButtonWrapper>
       </Text>
     </Content>
   </Wrapper>

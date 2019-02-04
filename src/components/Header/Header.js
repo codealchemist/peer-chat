@@ -9,7 +9,7 @@ const Wrapper = styled.div`
 
 const Header = () => (
   <Wrapper>
-    <h1>Peer Chat</h1>
+    <h1>Chateer</h1>
   </Wrapper>
 )
 

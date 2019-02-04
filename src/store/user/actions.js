@@ -1,4 +1,4 @@
-import { SET_NAME, SET_AVATAR } from './actionTypes'
+import { SET_NAME, SET_AVATAR, SET_ID } from './actionTypes'
 
 export const setName = payload => ({
   type: SET_NAME,
@@ -7,5 +7,10 @@ export const setName = payload => ({
 
 export const setAvatar = payload => ({
   type: SET_AVATAR,
+  payload
+})
+
+export const setId = payload => ({
+  type: SET_ID,
   payload
 })

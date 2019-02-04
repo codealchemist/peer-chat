@@ -19,10 +19,10 @@
   ],
   "devDependencies": {
     "@material-ui/core": "^3.9.1",
-    "clipboard": "^2.0.4",
     "moment": "^2.24.0",
     "nanoid": "^2.0.1",
     "react": "^16.7.0",
+    "react-clipboard.js": "^2.0.2",
     "react-dom": "^16.7.0",
     "react-redux": "^6.0.0",
     "react-router-dom": "^4.3.1",
