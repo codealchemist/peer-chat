@@ -1,5 +1,9 @@
 {
   "name": "Chateer",
+  "short_name": "Chateer",
+  "theme_color": "#000000",
+  "background_color": "#000000",
+  "display": "standalone",
   "icons": [
     {
       "src": "/android-icon-36x36.png",
