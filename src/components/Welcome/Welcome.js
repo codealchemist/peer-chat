@@ -4,8 +4,6 @@ import { compose } from 'redux'
 import { connect } from 'react-redux'
 import { setName, setId as setUserId } from 'store/user/actions'
 import { withRouter } from 'react-router-dom'
-import styled from 'styled-components'
-import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
 import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
@@ -13,30 +11,7 @@ import { withStyles } from '@material-ui/core/styles'
 import TextField from '@material-ui/core/TextField'
 import AvatarSelector from 'components/AvatarSelector'
 import CircularProgress from '@material-ui/core/CircularProgress'
-
-const StyledCard = styled(Card)`
-  h2 {
-    margin: 0 0 10px;
-  }
-
-  p {
-    margin: 30px 10px 10px;
-  }
-`
-
-const Form = styled.div`
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-
-  @media (max-width: 1024px) {
-    flex-direction: column;
-  }
-`
-
-const StyledText = styled(Typography)`
-  margin: 0 0 10px;
-`
+import { StyledCard, Form } from './Elements'
 
 const styles = {
   card: {
@@ -92,7 +67,7 @@ class Welcome extends React.PureComponent {
             Welcome!
           </Typography>
           <Typography color="textSecondary">
-            <b>Peer Chat</b> is a peer to peer chat application that uses{' '}
+            <b>Chateer</b> is a peer to peer chat application that uses{' '}
             <b>WebRTC data channels</b> to send messages between peers.
           </Typography>
           <Typography component="p">Let's create a new chat!</Typography>

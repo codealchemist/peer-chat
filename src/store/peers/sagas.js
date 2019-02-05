@@ -6,16 +6,8 @@ import {
   SEND_WRITING_NOTIFICATION,
   SEND_CLEAR_WRITING_NOTIFICATION
 } from 'store/chat/actionTypes'
-import {
-  addMessage,
-  addWritingNotification,
-  removeWritingNotification
-} from 'store/chat/actions'
 import { getPeer, getSignal } from './selectors'
 import {
-  add,
-  remove,
-  destroy,
   createLocalPeerSuccess,
   createLocalPeerFailed,
   createRemotePeerSuccess,
@@ -23,6 +15,7 @@ import {
   setSignal
 } from './actions'
 import Peer from 'services/peer'
+import { createRemotePeerChannelHandlers } from './channelHandlers'
 
 export function getRemotePeerEventChannel (remotePeer) {
   return eventChannel(emitter => {
@@ -47,36 +40,6 @@ export function getRemotePeerEventChannel (remotePeer) {
   })
 }
 
-function * handleRemotePeerData ({ data }) {
-  const { payload } = JSON.parse(data)
-  console.log('handle remote peer data', payload)
-
-  try {
-    switch (payload.type) {
-      case 'message':
-        console.log('-- MESSAGE', payload.data)
-        const message = {
-          ...payload.data,
-          type: 'peer'
-        }
-        yield put(addMessage(message))
-        break
-
-      case 'writing_notification':
-        console.log('-- WRITING NOTIFICATION', payload.data)
-        yield put(addWritingNotification(payload.data))
-        break
-
-      case 'clear_writing_notification':
-        console.log('-- CLEAR WRITING NOTIFICATION', payload.data)
-        yield put(removeWritingNotification(payload.data))
-        break
-    }
-  } catch (e) {
-    console.log('Error adding message', e)
-  }
-}
-
 export function * createRemotePeer ({ payload }) {
   try {
     console.log('create remote peer', payload)
@@ -87,6 +50,7 @@ export function * createRemotePeer ({ payload }) {
     const channel = getRemotePeerEventChannel(peer)
     const storedSignal = yield select(getSignal)
 
+    // Use channel to get events from WebRTC peer.
     try {
       while (true) {
         const { type, data } = yield take(channel)
@@ -94,27 +58,15 @@ export function * createRemotePeer ({ payload }) {
           `[ REMOTE PEER ]: GOT "${type}" DATA from EVENT CHANNEL:`,
           data
         )
-        switch (type) {
-          case 'signal':
-            if (storedSignal) {
-              console.log('ALREADY GOT SIGNAL!')
-              return
-            }
-            yield put(setSignal(data)) // {signal, id}
-            break
-          case 'connect':
-            console.log('Peer connected!')
-            break
-          case 'data':
-            yield handleRemotePeerData({ type, data })
-            break
-          case 'error':
-            console.log('got error from remotePeer event channel', data)
-            break
+
+        if (!(type in createRemotePeerChannelHandlers)) {
+          console.log('There is no handler for remote peer data type:', type)
+          return
         }
+        yield createRemotePeerChannelHandlers[type]({ data, storedSignal })
       }
     } catch (e) {
-      console.log('Event channel error', e)
+      console.log('[ REMOTE PEER ]: Event channel error', e)
     }
 
     yield put(createRemotePeerSuccess({ peer: 'TODO' }))
@@ -164,16 +116,25 @@ export function * createLocalPeer ({ payload }) {
           `[ LOCAL PEER ]: GOT "${type}" DATA from EVENT CHANNEL:`,
           data
         )
-        switch (type) {
-          case 'signal':
+
+        const handlers = {
+          signal: function * (data) {
             yield put(setSignal(data)) // {signal, id}
-            break
-          case 'data':
-            break
-          case 'error':
+          },
+          data: function * (data) {
+            // TODO
+          },
+          error: function * (data) {
             console.log('got error from localPeer event channel', data)
-            break
+            // TODO
+          }
         }
+
+        if (!(type in handlers)) {
+          console.log('There is no handler for remote peer data type:', type)
+          return
+        }
+        yield handlers[type](data)
       }
     } catch (e) {
       console.log('Event channel error', e)

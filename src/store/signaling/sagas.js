@@ -4,17 +4,17 @@ import {
   initSuccess,
   initFailed,
   sendSignalSuccess,
-  sendSignalError,
-  gotRemoteSignal
+  sendSignalError
 } from './actions'
 import signaling from 'services/signaling'
 import { SET_SIGNAL } from 'store/peers/actionTypes'
+import { initChannelHandlers } from './channelHandlers'
 
 export function getSignalingEventChannel (signaling) {
   return eventChannel(emitter => {
     signaling.onRemoteSignal(data => {
       console.log('signaling: got remote signal')
-      emitter({ type: 'remote-signal', data })
+      emitter({ type: 'remote_signal', data })
     })
 
     return () => {
@@ -40,11 +40,12 @@ export function * init () {
     const channel = getSignalingEventChannel(signaling)
     const { type, data } = yield take(channel)
     console.log(`Got signaling CHANNEL "${type}" DATA`, data)
-    switch (type) {
-      case 'remote-signal':
-        yield put(gotRemoteSignal({ signal: data }))
-        break
+
+    if (!(type in initChannelHandlers)) {
+      console.log('There is no handler for signaling data type:', type)
+      return
     }
+    yield initChannelHandlers[type](data)
   } catch (e) {
     yield put(initFailed({ error: e.message || 'Unknown error.' }))
   }

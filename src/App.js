@@ -8,7 +8,6 @@ import WelcomePage from './pages/WelcomePage'
 import ChatPage from './pages/ChatPage'
 import store from './store'
 import Background from 'components/Background'
-import Header from 'components/Header'
 
 const theme = createMuiTheme({
   typography: {
@@ -31,8 +30,6 @@ const App = () => (
       <Background />
 
       <Wrapper>
-        <Header />
-
         <Router>
           <>
             <Route path="/" exact component={WelcomePage} />

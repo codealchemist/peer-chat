@@ -1,6 +1,12 @@
 import React from 'react'
 import Welcome from 'components/Welcome'
+import Header from 'components/Header'
 
-const WelcomePage = () => <Welcome />
+const WelcomePage = () => (
+  <>
+    <Header />
+    <Welcome />
+  </>
+)
 
 export default WelcomePage

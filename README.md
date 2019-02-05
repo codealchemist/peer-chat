@@ -1,10 +1,10 @@
-# Peer Chat
+# Chateer
 
 P2P chat over WebRTC.
 
 ## Live app
 
-[https://peer-chat.herokuapp.com](https://peer-chat.herokuapp.com)
+[https://chateer.herokuapp.com](https://chateer.herokuapp.com)
 
 ## Development
 

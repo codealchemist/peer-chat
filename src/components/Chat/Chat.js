@@ -2,7 +2,6 @@ import React from 'react'
 import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { compose } from 'redux'
-import Clipboard from 'react-clipboard.js'
 import {
   sendMessage,
   sendWritingNotification,
@@ -11,56 +10,19 @@ import {
 import { getMessages, getWritingNotifications } from 'store/chat/selectors'
 import { getIsInitiator, getShareUrl } from 'store/signaling/selectors'
 import { getUser } from 'store/user/selectors'
-import styled from 'styled-components'
 import { withStyles } from '@material-ui/core/styles'
-import TextField from '@material-ui/core/TextField'
 import CircularProgress from '@material-ui/core/CircularProgress'
 import LinearProgress from '@material-ui/core/LinearProgress'
-import Icon from '@material-ui/core/Icon'
-import IconButton from '@material-ui/core/IconButton'
 import Message from 'components/Message'
-import Notification from 'components/Notification'
-
-const Wrapper = styled.div`
-  max-width: 640px;
-  width: 100%;
-  position: absolute;
-  height: calc(100% - 90px);
-  top: 70px;
-
-  @media (max-width: 800px) {
-    max-width: 100%;
-  }
-`
-
-const Content = styled.div`
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  padding: 20px 20px 0 20px;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-`
-
-const Footer = styled.div`
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-`
-
-const Header = styled.div`
-  width: 100%;
-`
-
-const Messages = styled.div`
-  flex: 1;
-  overflow: scroll;
-`
-
-const StyledText = styled(TextField)`
-  flex: 1;
-`
+import {
+  Wrapper,
+  Content,
+  Footer,
+  Messages,
+  StyledTextField,
+  InitiatorInitNotification,
+  PeerInitNotification
+} from './Elements'
 
 const styles = {
   progress: {
@@ -72,40 +34,7 @@ const styles = {
   }
 }
 
-const InitiatorNotificationWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-`
-
-const StyledIconButton = styled(IconButton)`
-  position: absolute;
-  top: -1px;
-  right: 10px;
-`
-
-const InitiatorInitNotification = ({ user, shareUrl }) => {
-  const ActionButton = (
-    <Clipboard data-clipboard-text={shareUrl} component="a">
-      <StyledIconButton id="share-link">
-        <Icon style={{ fontSize: '16px' }}>insert_link</Icon>
-      </StyledIconButton>
-    </Clipboard>
-  )
-
-  return (
-    <Notification
-      text={`${user.name} created chat.`}
-      date={new Date()}
-      actionButton={ActionButton}
-    />
-  )
-}
-
-const PeerInitNotification = user => (
-  <Notification text={`${user.name} joined chat.`} date={new Date()} />
-)
-
-class Chat extends React.PureComponent {
+export class Chat extends React.PureComponent {
   writingNotificationTimeout = null
   writingNotificationDelay = 3 // Seconds.
 
@@ -115,7 +44,7 @@ class Chat extends React.PureComponent {
 
   componentDidMount() {
     // Redirect to welcome page if user not set.
-    const { user, history, isInitiator, shareUrl } = this.props
+    const { user, history } = this.props
     if (!user.id) {
       return history.push('/')
     }
@@ -137,7 +66,7 @@ class Chat extends React.PureComponent {
 
     // Schedule writing notification.
     console.log('Schedule writing notification...')
-    this.writingNotificationTimeout = setTimeout(() => {
+    this.writingNotificationTimeout = window.setTimeout(() => {
       const { user, sendWritingNotification } = this.props
       sendWritingNotification(user)
     }, 1000 * this.writingNotificationDelay)
@@ -172,14 +101,7 @@ class Chat extends React.PureComponent {
   }
 
   render() {
-    const {
-      classes,
-      sending,
-      user,
-      messages,
-      notifications,
-      isInitiator
-    } = this.props
+    const { classes, sending, messages, notifications } = this.props
     return (
       <Wrapper>
         <Content>
@@ -219,8 +141,9 @@ class Chat extends React.PureComponent {
           </Messages>
 
           <Footer>
-            <StyledText
-              id="name"
+            <StyledTextField
+              id="message-input"
+              name="message-input"
               label="Message"
               value={this.state.message}
               onChange={this.onMessageChange}

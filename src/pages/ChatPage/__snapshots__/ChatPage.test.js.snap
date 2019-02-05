@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ChatPage should render 1`] = `
+<ChatPage>
+  <Header
+    type="subtleRight"
+  >
+    <styled.div
+      type="subtleRight"
+    >
+      <StyledComponent
+        forwardedComponent={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "sc-bdVaJa",
+              "isStatic": false,
+              "lastClassName": "lepajG",
+              "rules": Array [
+                "
+  h1 {
+    font-family: 'Playfair Display', serif;
+  }
+
+  ",
+                [Function],
+                "
+",
+              ],
+            },
+            "displayName": "styled.div",
+            "foldedComponentIds": Array [],
+            "render": [Function],
+            "styledComponentId": "sc-bdVaJa",
+            "target": "div",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        forwardedRef={null}
+        type="subtleRight"
+      >
+        <div
+          className="sc-bdVaJa lepajG"
+          type="subtleRight"
+        >
+          <h1>
+            Chateer
+          </h1>
+        </div>
+      </StyledComponent>
+    </styled.div>
+  </Header>
+  <div />
+</ChatPage>
+`;

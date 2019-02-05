@@ -1,0 +1,160 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AvatarSelector should render connected component 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <WithStyles(Connect(AvatarSelector))>
+    <Connect(AvatarSelector)
+      classes={
+        Object {
+          "paper": "Connect-AvatarSelector--paper-1",
+        }
+      }
+    >
+      <AvatarSelector
+        avatar="rock-it"
+        classes={
+          Object {
+            "paper": "Connect-AvatarSelector--paper-1",
+          }
+        }
+        setAvatar={[Function]}
+      >
+        <styled.div
+          id="open-modal-button"
+          onClick={[Function]}
+        >
+          <StyledComponent
+            forwardedComponent={
+              Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "sc-bdVaJa",
+                  "isStatic": true,
+                  "lastClassName": "etOIPa",
+                  "rules": Array [
+                    "
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+",
+                  ],
+                },
+                "displayName": "styled.div",
+                "foldedComponentIds": Array [],
+                "render": [Function],
+                "styledComponentId": "sc-bdVaJa",
+                "target": "div",
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              }
+            }
+            forwardedRef={null}
+            id="open-modal-button"
+            onClick={[Function]}
+          >
+            <div
+              className="sc-bdVaJa etOIPa"
+              id="open-modal-button"
+              onClick={[Function]}
+            >
+              <WithStyles(Icon)
+                style={
+                  Object {
+                    "fontSize": "50px",
+                  }
+                }
+              >
+                <Icon
+                  classes={
+                    Object {
+                      "colorAction": "MuiIcon-colorAction-5",
+                      "colorDisabled": "MuiIcon-colorDisabled-7",
+                      "colorError": "MuiIcon-colorError-6",
+                      "colorPrimary": "MuiIcon-colorPrimary-3",
+                      "colorSecondary": "MuiIcon-colorSecondary-4",
+                      "fontSizeInherit": "MuiIcon-fontSizeInherit-8",
+                      "fontSizeLarge": "MuiIcon-fontSizeLarge-10",
+                      "fontSizeSmall": "MuiIcon-fontSizeSmall-9",
+                      "root": "MuiIcon-root-2",
+                    }
+                  }
+                  color="inherit"
+                  component="span"
+                  fontSize="default"
+                  style={
+                    Object {
+                      "fontSize": "50px",
+                    }
+                  }
+                >
+                  <span
+                    aria-hidden="true"
+                    className="material-icons MuiIcon-root-2"
+                    style={
+                      Object {
+                        "fontSize": "50px",
+                      }
+                    }
+                  >
+                    rock-it
+                  </span>
+                </Icon>
+              </WithStyles(Icon)>
+            </div>
+          </StyledComponent>
+        </styled.div>
+        <WithStyles(Modal)
+          onClose={[Function]}
+          open={false}
+        >
+          <Modal
+            BackdropComponent={[Function]}
+            classes={
+              Object {
+                "hidden": "MuiModal-hidden-12",
+                "root": "MuiModal-root-11",
+              }
+            }
+            closeAfterTransition={false}
+            disableAutoFocus={false}
+            disableBackdropClick={false}
+            disableEnforceFocus={false}
+            disableEscapeKeyDown={false}
+            disablePortal={false}
+            disableRestoreFocus={false}
+            hideBackdrop={false}
+            keepMounted={false}
+            manager={
+              ModalManager {
+                "data": Array [],
+                "handleContainerOverflow": true,
+                "hideSiblingNodes": true,
+                "modals": Array [],
+              }
+            }
+            onClose={[Function]}
+            open={false}
+          />
+        </WithStyles(Modal)>
+      </AvatarSelector>
+    </Connect(AvatarSelector)>
+  </WithStyles(Connect(AvatarSelector))>
+</Provider>
+`;

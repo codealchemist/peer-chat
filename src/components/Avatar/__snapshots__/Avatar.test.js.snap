@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Avatar should render 1`] = `
+<Avatar
+  avatar="rock"
+>
+  <WithStyles(Icon)
+    style={
+      Object {
+        "fontSize": "50px",
+      }
+    }
+  >
+    <Icon
+      classes={
+        Object {
+          "colorAction": "MuiIcon-colorAction-4",
+          "colorDisabled": "MuiIcon-colorDisabled-6",
+          "colorError": "MuiIcon-colorError-5",
+          "colorPrimary": "MuiIcon-colorPrimary-2",
+          "colorSecondary": "MuiIcon-colorSecondary-3",
+          "fontSizeInherit": "MuiIcon-fontSizeInherit-7",
+          "fontSizeLarge": "MuiIcon-fontSizeLarge-9",
+          "fontSizeSmall": "MuiIcon-fontSizeSmall-8",
+          "root": "MuiIcon-root-1",
+        }
+      }
+      color="inherit"
+      component="span"
+      fontSize="default"
+      style={
+        Object {
+          "fontSize": "50px",
+        }
+      }
+    >
+      <span
+        aria-hidden="true"
+        className="material-icons MuiIcon-root-1"
+        style={
+          Object {
+            "fontSize": "50px",
+          }
+        }
+      >
+        rock
+      </span>
+    </Icon>
+  </WithStyles(Icon)>
+</Avatar>
+`;
