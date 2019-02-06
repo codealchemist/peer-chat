@@ -9,6 +9,10 @@ P2P chat over WebRTC.
 
 [https://chateer.tk](https://chateer.tk)
 
+## Demo video
+
+[![Chateer Demo](http://img.youtube.com/vi/https://youtu.be/TlWVj1zsIls/0.jpg)](http://www.youtube.com/watch?v=https://youtu.be/TlWVj1zsIls)
+
 ## Development
 
 Clone the repo, install dependencies and start the app.
