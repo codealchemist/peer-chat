@@ -42,12 +42,23 @@ export class Chat extends React.PureComponent {
     message: ''
   }
 
+  constructor(props) {
+    super(props)
+    this.$messages = React.createRef()
+  }
+
   componentDidMount() {
     // Redirect to welcome page if user not set.
     const { user, history } = this.props
     if (!user.id) {
       return history.push('/')
     }
+  }
+
+  componentDidUpdate() {
+    const $el = this.$messages.current
+    const scrollHeight = $el.scrollHeight
+    $el.scrollTop = scrollHeight
   }
 
   scheduleWritingNotification(value) {
@@ -105,7 +116,7 @@ export class Chat extends React.PureComponent {
     return (
       <Wrapper>
         <Content>
-          <Messages>
+          <Messages ref={this.$messages}>
             {this.getInitNofication()}
             {/* <Message
               user={{ name: 'Bert', avatar: 'photo_camera' }}
