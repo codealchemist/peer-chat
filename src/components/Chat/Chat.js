@@ -84,6 +84,7 @@ export class Chat extends React.PureComponent {
   }
 
   onMessageChange = ({ target: { value } }) => {
+    value = value.trim()
     this.setState({ message: value })
     this.scheduleWritingNotification(value)
   }
