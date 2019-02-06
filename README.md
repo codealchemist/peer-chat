@@ -11,7 +11,7 @@ P2P chat over WebRTC.
 
 ## Demo video
 
-[![Chateer Demo](http://img.youtube.com/vi/https://youtu.be/TlWVj1zsIls/0.jpg)](http://www.youtube.com/watch?v=https://youtu.be/TlWVj1zsIls)
+[![Chateer Demo](http://img.youtube.com/vi/TlWVj1zsIls/0.jpg)](http://www.youtube.com/watch?v=TlWVj1zsIls)
 
 ## Development
 
