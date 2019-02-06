@@ -2,7 +2,7 @@
 
 exports[`Message should render 1`] = `
 <Message
-  date={2019-02-04T23:55:17.782Z}
+  date="2019-02-04T23:55:17.782Z"
   text="For the love of God"
   user={
     Object {
