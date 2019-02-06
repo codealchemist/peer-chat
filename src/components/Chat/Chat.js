@@ -160,6 +160,8 @@ export class Chat extends React.PureComponent {
               onChange={this.onMessageChange}
               onKeyPress={this.onKey}
               margin="normal"
+              rowsMax="1"
+              multiline
               autoFocus
             />
             {sending && (
