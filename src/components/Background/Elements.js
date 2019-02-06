@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
   background-position: center;
   width: 100%;
   height: 100%;
-  position: absolute;
+  position: fixed;
   z-index: -1;
   filter: blur(5px);
 `

@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
+  z-index: 1;
   h1 {
     font-family: 'Playfair Display', serif;
   }
