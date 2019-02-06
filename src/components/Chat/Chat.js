@@ -64,7 +64,7 @@ export class Chat extends React.PureComponent {
   scheduleWritingNotification(value) {
     // Clear writing notification if the user cleared the message.
     // Also send a clearWritingNotification message to remote peer.
-    if (!value) {
+    if (!value.trim()) {
       const { sendClearWritingNotification, user } = this.props
       clearTimeout(this.writingNotificationTimeout)
       this.writingNotificationTimeout = null
@@ -84,7 +84,6 @@ export class Chat extends React.PureComponent {
   }
 
   onMessageChange = ({ target: { value } }) => {
-    value = value.trim()
     this.setState({ message: value })
     this.scheduleWritingNotification(value)
   }
