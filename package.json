@@ -5,7 +5,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "CI=true react-scripts test --silent --updateSnapshot",
+    "test": "CI=true react-scripts test --updateSnapshot",
     "test:watch": "react-scripts test",
     "coverage": "jest --coverage",
     "lint": "standard",
