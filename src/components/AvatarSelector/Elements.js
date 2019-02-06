@@ -5,6 +5,7 @@ export const styles = theme => ({
   paper: {
     position: 'absolute',
     width: theme.spacing.unit * 50,
+    maxWidth: '80%',
     backgroundColor: 'rgba(255, 255, 255, 0.8)',
     color: 'black',
     boxShadow: theme.shadows[5],
@@ -13,7 +14,8 @@ export const styles = theme => ({
     top: '20%',
     left: 0,
     right: 0,
-    margin: 'auto'
+    margin: 'auto',
+    textAlign: 'center'
   }
 })
 
@@ -30,6 +32,7 @@ export const Wrapper = styled.div`
 export const IconsList = styled.div`
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 `
 
 export const StyledIcon = styled(Icon)`
