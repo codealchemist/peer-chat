@@ -12,9 +12,10 @@ exports[`WelcomePage should render 1`] = `
             "componentStyle": ComponentStyle {
               "componentId": "sc-bdVaJa",
               "isStatic": false,
-              "lastClassName": "OOPmn",
+              "lastClassName": "kIgjjn",
               "rules": Array [
                 "
+  z-index: 1;
   h1 {
     font-family: 'Playfair Display', serif;
   }
@@ -38,7 +39,7 @@ exports[`WelcomePage should render 1`] = `
         forwardedRef={null}
       >
         <div
-          className="sc-bdVaJa OOPmn"
+          className="sc-bdVaJa kIgjjn"
         >
           <h1>
             Chateer

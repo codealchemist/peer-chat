@@ -43,7 +43,7 @@ class Welcome extends React.PureComponent {
   }
 
   onNameChange = ({ target: { value } }) => {
-    this.setState({ name: value.trim() })
+    this.setState({ name: value })
   }
 
   createChat = () => {
@@ -54,7 +54,7 @@ class Welcome extends React.PureComponent {
   }
 
   onKey = ({ key }) => {
-    if (key !== 'Enter' || !this.state.name) return
+    if (key !== 'Enter' || !this.state.name.trim()) return
     this.createChat()
   }
 
@@ -82,13 +82,18 @@ class Welcome extends React.PureComponent {
               margin="normal"
               variant="outlined"
               onKeyPress={this.onKey}
+              rowsMax="1"
+              inputProps={{
+                maxLength: 20
+              }}
+              multiline
               autoFocus
             />
             <div className={classes.buttonContainer}>
               <Button
                 variant="contained"
                 color="primary"
-                disabled={!this.state.name || this.state.openingChat}
+                disabled={!this.state.name.trim() || this.state.openingChat}
                 onClick={this.createChat}
               >
                 Create chat

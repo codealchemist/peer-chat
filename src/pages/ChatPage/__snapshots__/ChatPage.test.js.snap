@@ -16,9 +16,10 @@ exports[`ChatPage should render 1`] = `
             "componentStyle": ComponentStyle {
               "componentId": "sc-bdVaJa",
               "isStatic": false,
-              "lastClassName": "lepajG",
+              "lastClassName": "gPmEgM",
               "rules": Array [
                 "
+  z-index: 1;
   h1 {
     font-family: 'Playfair Display', serif;
   }
@@ -43,7 +44,7 @@ exports[`ChatPage should render 1`] = `
         type="subtleRight"
       >
         <div
-          className="sc-bdVaJa lepajG"
+          className="sc-bdVaJa gPmEgM"
           type="subtleRight"
         >
           <h1>

@@ -5,17 +5,17 @@ export const styles = theme => ({
   paper: {
     position: 'absolute',
     width: theme.spacing.unit * 50,
-    maxWidth: '80%',
-    backgroundColor: 'rgba(255, 255, 255, 0.8)',
+    maxWidth: '95%',
     color: 'black',
     boxShadow: theme.shadows[5],
-    padding: theme.spacing.unit * 4,
     outline: 'none',
     top: '20%',
     left: 0,
     right: 0,
     margin: 'auto',
-    textAlign: 'center'
+    textAlign: 'center',
+    height: 'calc(80% - 10px)',
+    overflow: 'scroll'
   }
 })
 
@@ -27,6 +27,15 @@ export const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   cursor: pointer;
+`
+
+export const ModalContent = styled.div`
+  background: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+`
+
+export const Title = styled.h4`
+  margin-top: 0;
 `
 
 export const IconsList = styled.div`

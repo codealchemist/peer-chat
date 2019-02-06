@@ -45,9 +45,9 @@ exports[`Welcome should render 1`] = `
                 "Naked": [Function],
                 "attrs": Array [],
                 "componentStyle": ComponentStyle {
-                  "componentId": "sc-bxivhb",
+                  "componentId": "sc-EHOje",
                   "isStatic": true,
-                  "lastClassName": "gsmTHA",
+                  "lastClassName": "gCYaTq",
                   "rules": Array [
                     "
   h2 {
@@ -426,7 +426,7 @@ exports[`Welcome should render 1`] = `
                   "name": "MuiCard",
                 },
                 "render": [Function],
-                "styledComponentId": "sc-bxivhb",
+                "styledComponentId": "sc-EHOje",
                 "target": [Function],
                 "toString": [Function],
                 "warnTooManyClasses": [Function],
@@ -437,10 +437,10 @@ exports[`Welcome should render 1`] = `
             forwardedRef={null}
           >
             <WithStyles(Card)
-              className="Connect-Welcome--card-1 sc-bxivhb gsmTHA"
+              className="Connect-Welcome--card-1 sc-EHOje gCYaTq"
             >
               <Card
-                className="Connect-Welcome--card-1 sc-bxivhb gsmTHA"
+                className="Connect-Welcome--card-1 sc-EHOje gCYaTq"
                 classes={
                   Object {
                     "root": "MuiCard-root-4",
@@ -449,11 +449,11 @@ exports[`Welcome should render 1`] = `
                 raised={false}
               >
                 <WithStyles(Paper)
-                  className="MuiCard-root-4 Connect-Welcome--card-1 sc-bxivhb gsmTHA"
+                  className="MuiCard-root-4 Connect-Welcome--card-1 sc-EHOje gCYaTq"
                   elevation={1}
                 >
                   <Paper
-                    className="MuiCard-root-4 Connect-Welcome--card-1 sc-bxivhb gsmTHA"
+                    className="MuiCard-root-4 Connect-Welcome--card-1 sc-EHOje gCYaTq"
                     classes={
                       Object {
                         "elevation0": "MuiPaper-elevation0-7",
@@ -490,7 +490,7 @@ exports[`Welcome should render 1`] = `
                     square={false}
                   >
                     <div
-                      className="MuiPaper-root-5 MuiPaper-elevation1-8 MuiPaper-rounded-6 MuiCard-root-4 Connect-Welcome--card-1 sc-bxivhb gsmTHA"
+                      className="MuiPaper-root-5 MuiPaper-elevation1-8 MuiPaper-rounded-6 MuiCard-root-4 Connect-Welcome--card-1 sc-EHOje gCYaTq"
                     >
                       <WithStyles(CardContent)>
                         <CardContent
@@ -1846,9 +1846,9 @@ exports[`Welcome should render 1`] = `
                                     "$$typeof": Symbol(react.forward_ref),
                                     "attrs": Array [],
                                     "componentStyle": ComponentStyle {
-                                      "componentId": "sc-ifAKCX",
+                                      "componentId": "sc-bZQynM",
                                       "isStatic": true,
-                                      "lastClassName": "eTDknh",
+                                      "lastClassName": "bhJtLa",
                                       "rules": Array [
                                         "
   display: flex;
@@ -1864,7 +1864,7 @@ exports[`Welcome should render 1`] = `
                                     "displayName": "styled.div",
                                     "foldedComponentIds": Array [],
                                     "render": [Function],
-                                    "styledComponentId": "sc-ifAKCX",
+                                    "styledComponentId": "sc-bZQynM",
                                     "target": "div",
                                     "toString": [Function],
                                     "warnTooManyClasses": [Function],
@@ -1874,7 +1874,7 @@ exports[`Welcome should render 1`] = `
                                 forwardedRef={null}
                               >
                                 <div
-                                  className="sc-ifAKCX eTDknh"
+                                  className="sc-bZQynM bhJtLa"
                                 >
                                   <WithStyles(Connect(AvatarSelector))>
                                     <Connect(AvatarSelector)
@@ -2022,11 +2022,18 @@ exports[`Welcome should render 1`] = `
                                   <TextField
                                     autoFocus={true}
                                     id="name"
+                                    inputProps={
+                                      Object {
+                                        "maxLength": 20,
+                                      }
+                                    }
                                     label="Name"
                                     margin="normal"
+                                    multiline={true}
                                     onChange={[Function]}
                                     onKeyPress={[Function]}
                                     required={false}
+                                    rowsMax="1"
                                     select={false}
                                     value=""
                                     variant="outlined"
@@ -2193,8 +2200,15 @@ exports[`Welcome should render 1`] = `
                                           <WithStyles(OutlinedInput)
                                             autoFocus={true}
                                             id="name"
+                                            inputProps={
+                                              Object {
+                                                "maxLength": 20,
+                                              }
+                                            }
                                             labelWidth={0}
+                                            multiline={true}
                                             onChange={[Function]}
+                                            rowsMax="1"
                                             value=""
                                           >
                                             <OutlinedInput
@@ -2217,8 +2231,15 @@ exports[`Welcome should render 1`] = `
                                                 }
                                               }
                                               id="name"
+                                              inputProps={
+                                                Object {
+                                                  "maxLength": 20,
+                                                }
+                                              }
                                               labelWidth={0}
+                                              multiline={true}
                                               onChange={[Function]}
+                                              rowsMax="1"
                                               value=""
                                             >
                                               <WithStyles(WithFormControlContext(InputBase))
@@ -2243,9 +2264,15 @@ exports[`Welcome should render 1`] = `
                                                 fullWidth={false}
                                                 id="name"
                                                 inputComponent="input"
-                                                multiline={false}
+                                                inputProps={
+                                                  Object {
+                                                    "maxLength": 20,
+                                                  }
+                                                }
+                                                multiline={true}
                                                 onChange={[Function]}
                                                 renderPrefix={[Function]}
+                                                rowsMax="1"
                                                 type="text"
                                                 value=""
                                               >
@@ -2275,9 +2302,15 @@ exports[`Welcome should render 1`] = `
                                                   fullWidth={false}
                                                   id="name"
                                                   inputComponent="input"
-                                                  multiline={false}
+                                                  inputProps={
+                                                    Object {
+                                                      "maxLength": 20,
+                                                    }
+                                                  }
+                                                  multiline={true}
                                                   onChange={[Function]}
                                                   renderPrefix={[Function]}
+                                                  rowsMax="1"
                                                   type="text"
                                                   value=""
                                                 >
@@ -2307,6 +2340,11 @@ exports[`Welcome should render 1`] = `
                                                     fullWidth={false}
                                                     id="name"
                                                     inputComponent="input"
+                                                    inputProps={
+                                                      Object {
+                                                        "maxLength": 20,
+                                                      }
+                                                    }
                                                     muiFormControl={
                                                       Object {
                                                         "adornedStart": false,
@@ -2323,14 +2361,15 @@ exports[`Welcome should render 1`] = `
                                                         "variant": "outlined",
                                                       }
                                                     }
-                                                    multiline={false}
+                                                    multiline={true}
                                                     onChange={[Function]}
                                                     renderPrefix={[Function]}
+                                                    rowsMax="1"
                                                     type="text"
                                                     value=""
                                                   >
                                                     <div
-                                                      className="MuiInputBase-root-116 MuiOutlinedInput-root-103 MuiInputBase-formControl-117"
+                                                      className="MuiInputBase-root-116 MuiOutlinedInput-root-103 MuiInputBase-formControl-117 MuiInputBase-multiline-124 MuiOutlinedInput-multiline-109"
                                                       onClick={[Function]}
                                                     >
                                                       <WithStyles(NotchedOutline)
@@ -2739,19 +2778,89 @@ exports[`Welcome should render 1`] = `
                                                           </fieldset>
                                                         </NotchedOutline>
                                                       </WithStyles(NotchedOutline)>
-                                                      <input
+                                                      <WithStyles(Textarea)
                                                         aria-invalid={false}
                                                         autoFocus={true}
-                                                        className="MuiInputBase-input-126 MuiOutlinedInput-input-111"
+                                                        className="MuiInputBase-input-126 MuiOutlinedInput-input-111 MuiInputBase-inputMultiline-128 MuiOutlinedInput-inputMultiline-113"
                                                         disabled={false}
                                                         id="name"
+                                                        maxLength={20}
                                                         onBlur={[Function]}
                                                         onChange={[Function]}
                                                         onFocus={[Function]}
                                                         required={false}
-                                                        type="text"
+                                                        rowsMax="1"
+                                                        textareaRef={[Function]}
                                                         value=""
-                                                      />
+                                                      >
+                                                        <Textarea
+                                                          aria-invalid={false}
+                                                          autoFocus={true}
+                                                          className="MuiInputBase-input-126 MuiOutlinedInput-input-111 MuiInputBase-inputMultiline-128 MuiOutlinedInput-inputMultiline-113"
+                                                          classes={
+                                                            Object {
+                                                              "root": "MuiPrivateTextarea-root-135",
+                                                              "shadow": "MuiPrivateTextarea-shadow-137",
+                                                              "textarea": "MuiPrivateTextarea-textarea-136",
+                                                            }
+                                                          }
+                                                          disabled={false}
+                                                          id="name"
+                                                          maxLength={20}
+                                                          onBlur={[Function]}
+                                                          onChange={[Function]}
+                                                          onFocus={[Function]}
+                                                          required={false}
+                                                          rows={1}
+                                                          rowsMax="1"
+                                                          textareaRef={[Function]}
+                                                          value=""
+                                                        >
+                                                          <div
+                                                            className="MuiPrivateTextarea-root-135"
+                                                          >
+                                                            <EventListener
+                                                              onResize={[Function]}
+                                                              target="window"
+                                                            />
+                                                            <textarea
+                                                              aria-hidden="true"
+                                                              className="MuiPrivateTextarea-textarea-136 MuiPrivateTextarea-shadow-137"
+                                                              readOnly={true}
+                                                              rows="1"
+                                                              tabIndex={-1}
+                                                              value=""
+                                                            />
+                                                            <textarea
+                                                              aria-hidden="true"
+                                                              className="MuiPrivateTextarea-textarea-136 MuiPrivateTextarea-shadow-137"
+                                                              readOnly={true}
+                                                              rows={1}
+                                                              tabIndex={-1}
+                                                              value=""
+                                                            />
+                                                            <textarea
+                                                              aria-invalid={false}
+                                                              autoFocus={true}
+                                                              className="MuiPrivateTextarea-textarea-136 MuiInputBase-input-126 MuiOutlinedInput-input-111 MuiInputBase-inputMultiline-128 MuiOutlinedInput-inputMultiline-113"
+                                                              disabled={false}
+                                                              id="name"
+                                                              maxLength={20}
+                                                              onBlur={[Function]}
+                                                              onChange={[Function]}
+                                                              onFocus={[Function]}
+                                                              required={false}
+                                                              rows={1}
+                                                              style={
+                                                                Object {
+                                                                  "height": 19,
+                                                                }
+                                                              }
+                                                              value=""
+                                                            />
+                                                          </div>
+                                                        </Textarea>
+                                                      </WithStyles(Textarea)>
                                                     </div>
                                                   </InputBase>
                                                 </WithFormControlContext(InputBase)>
@@ -2774,32 +2883,32 @@ exports[`Welcome should render 1`] = `
                                       <Button
                                         classes={
                                           Object {
-                                            "colorInherit": "MuiButton-colorInherit-156",
-                                            "contained": "MuiButton-contained-146",
-                                            "containedPrimary": "MuiButton-containedPrimary-147",
-                                            "containedSecondary": "MuiButton-containedSecondary-148",
-                                            "disabled": "MuiButton-disabled-155",
-                                            "extendedFab": "MuiButton-extendedFab-153",
-                                            "fab": "MuiButton-fab-152",
-                                            "flat": "MuiButton-flat-140",
-                                            "flatPrimary": "MuiButton-flatPrimary-141",
-                                            "flatSecondary": "MuiButton-flatSecondary-142",
-                                            "focusVisible": "MuiButton-focusVisible-154",
-                                            "fullWidth": "MuiButton-fullWidth-160",
-                                            "label": "MuiButton-label-136",
-                                            "mini": "MuiButton-mini-157",
-                                            "outlined": "MuiButton-outlined-143",
-                                            "outlinedPrimary": "MuiButton-outlinedPrimary-144",
-                                            "outlinedSecondary": "MuiButton-outlinedSecondary-145",
-                                            "raised": "MuiButton-raised-149",
-                                            "raisedPrimary": "MuiButton-raisedPrimary-150",
-                                            "raisedSecondary": "MuiButton-raisedSecondary-151",
-                                            "root": "MuiButton-root-135",
-                                            "sizeLarge": "MuiButton-sizeLarge-159",
-                                            "sizeSmall": "MuiButton-sizeSmall-158",
-                                            "text": "MuiButton-text-137",
-                                            "textPrimary": "MuiButton-textPrimary-138",
-                                            "textSecondary": "MuiButton-textSecondary-139",
+                                            "colorInherit": "MuiButton-colorInherit-159",
+                                            "contained": "MuiButton-contained-149",
+                                            "containedPrimary": "MuiButton-containedPrimary-150",
+                                            "containedSecondary": "MuiButton-containedSecondary-151",
+                                            "disabled": "MuiButton-disabled-158",
+                                            "extendedFab": "MuiButton-extendedFab-156",
+                                            "fab": "MuiButton-fab-155",
+                                            "flat": "MuiButton-flat-143",
+                                            "flatPrimary": "MuiButton-flatPrimary-144",
+                                            "flatSecondary": "MuiButton-flatSecondary-145",
+                                            "focusVisible": "MuiButton-focusVisible-157",
+                                            "fullWidth": "MuiButton-fullWidth-163",
+                                            "label": "MuiButton-label-139",
+                                            "mini": "MuiButton-mini-160",
+                                            "outlined": "MuiButton-outlined-146",
+                                            "outlinedPrimary": "MuiButton-outlinedPrimary-147",
+                                            "outlinedSecondary": "MuiButton-outlinedSecondary-148",
+                                            "raised": "MuiButton-raised-152",
+                                            "raisedPrimary": "MuiButton-raisedPrimary-153",
+                                            "raisedSecondary": "MuiButton-raisedSecondary-154",
+                                            "root": "MuiButton-root-138",
+                                            "sizeLarge": "MuiButton-sizeLarge-162",
+                                            "sizeSmall": "MuiButton-sizeSmall-161",
+                                            "text": "MuiButton-text-140",
+                                            "textPrimary": "MuiButton-textPrimary-141",
+                                            "textSecondary": "MuiButton-textSecondary-142",
                                           }
                                         }
                                         color="primary"
@@ -2814,22 +2923,22 @@ exports[`Welcome should render 1`] = `
                                         variant="contained"
                                       >
                                         <WithStyles(ButtonBase)
-                                          className="MuiButton-root-135 MuiButton-contained-146 MuiButton-containedPrimary-147 MuiButton-raised-149 MuiButton-raisedPrimary-150 MuiButton-disabled-155"
+                                          className="MuiButton-root-138 MuiButton-contained-149 MuiButton-containedPrimary-150 MuiButton-raised-152 MuiButton-raisedPrimary-153 MuiButton-disabled-158"
                                           component="button"
                                           disabled={true}
                                           focusRipple={true}
-                                          focusVisibleClassName="MuiButton-focusVisible-154"
+                                          focusVisibleClassName="MuiButton-focusVisible-157"
                                           onClick={[Function]}
                                           type="button"
                                         >
                                           <ButtonBase
                                             centerRipple={false}
-                                            className="MuiButton-root-135 MuiButton-contained-146 MuiButton-containedPrimary-147 MuiButton-raised-149 MuiButton-raisedPrimary-150 MuiButton-disabled-155"
+                                            className="MuiButton-root-138 MuiButton-contained-149 MuiButton-containedPrimary-150 MuiButton-raised-152 MuiButton-raisedPrimary-153 MuiButton-disabled-158"
                                             classes={
                                               Object {
-                                                "disabled": "MuiButtonBase-disabled-162",
-                                                "focusVisible": "MuiButtonBase-focusVisible-163",
-                                                "root": "MuiButtonBase-root-161",
+                                                "disabled": "MuiButtonBase-disabled-165",
+                                                "focusVisible": "MuiButtonBase-focusVisible-166",
+                                                "root": "MuiButtonBase-root-164",
                                               }
                                             }
                                             component="button"
@@ -2837,13 +2946,13 @@ exports[`Welcome should render 1`] = `
                                             disableTouchRipple={false}
                                             disabled={true}
                                             focusRipple={true}
-                                            focusVisibleClassName="MuiButton-focusVisible-154"
+                                            focusVisibleClassName="MuiButton-focusVisible-157"
                                             onClick={[Function]}
                                             tabIndex="0"
                                             type="button"
                                           >
                                             <button
-                                              className="MuiButtonBase-root-161 MuiButtonBase-disabled-162 MuiButton-root-135 MuiButton-contained-146 MuiButton-containedPrimary-147 MuiButton-raised-149 MuiButton-raisedPrimary-150 MuiButton-disabled-155"
+                                              className="MuiButtonBase-root-164 MuiButtonBase-disabled-165 MuiButton-root-138 MuiButton-contained-149 MuiButton-containedPrimary-150 MuiButton-raised-152 MuiButton-raisedPrimary-153 MuiButton-disabled-158"
                                               disabled={true}
                                               onBlur={[Function]}
                                               onClick={[Function]}
@@ -2861,7 +2970,7 @@ exports[`Welcome should render 1`] = `
                                               type="button"
                                             >
                                               <span
-                                                className="MuiButton-label-136"
+                                                className="MuiButton-label-139"
                                               >
                                                 Create chat
                                               </span>

@@ -5,7 +5,14 @@ import { setAvatar } from 'store/user/actions'
 import { withStyles } from '@material-ui/core/styles'
 import Modal from '@material-ui/core/Modal'
 import Icon from '@material-ui/core/Icon'
-import { Wrapper, IconsList, StyledIcon, styles } from './Elements'
+import {
+  Wrapper,
+  ModalContent,
+  Title,
+  IconsList,
+  StyledIcon,
+  styles
+} from './Elements'
 import icons from './icons.json'
 
 export class AvatarSelector extends React.PureComponent {
@@ -37,18 +44,20 @@ export class AvatarSelector extends React.PureComponent {
 
         <Modal open={this.state.isModalOpen} onClose={this.closeModal}>
           <div className={classes.paper}>
-            <h4>SELECT AVATAR</h4>
-            <IconsList>
-              {icons.map(icon => (
-                <StyledIcon
-                  key={icon}
-                  style={{ fontSize: '50px' }}
-                  onClick={() => this.selectAvatar(icon)}
-                >
-                  {icon}
-                </StyledIcon>
-              ))}
-            </IconsList>
+            <ModalContent>
+              <Title>SELECT AVATAR</Title>
+              <IconsList>
+                {icons.map(icon => (
+                  <StyledIcon
+                    key={icon}
+                    style={{ fontSize: '50px' }}
+                    onClick={() => this.selectAvatar(icon)}
+                  >
+                    {icon}
+                  </StyledIcon>
+                ))}
+              </IconsList>
+            </ModalContent>
           </div>
         </Modal>
       </>

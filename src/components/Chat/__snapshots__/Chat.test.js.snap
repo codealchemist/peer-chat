@@ -160,7 +160,65 @@ exports[`Chat should not redirect to / 1`] = `
                             "withComponent": [Function],
                           }
                         }
-                        forwardedRef={null}
+                        forwardedRef={
+                          Object {
+                            "current": <div
+                              class="sc-gqjmRU cUiTuu"
+                            >
+                              <div
+                                class="sc-ifAKCX hkAyvq"
+                              >
+                                <div
+                                  class="sc-EHOje hsXxjJ"
+                                >
+                                  <div
+                                    class="sc-gzVnrw gDmTXO"
+                                  >
+                                    <div
+                                      class="sc-bZQynM gNQKpL"
+                                    >
+                                      <p>
+                                        February 5th 2019, 12:24:29 pm
+                                      </p>
+                                    </div>
+                                    <p>
+                                      Dude created chat.
+                                    </p>
+                                    <div
+                                      class="sc-htoDjs dCWZkl"
+                                    >
+                                      <a
+                                        class=""
+                                      >
+                                        <button
+                                          class="MuiButtonBase-root-8 MuiIconButton-root-2 sc-jTzLTM kokRiH"
+                                          id="share-link"
+                                          tabindex="0"
+                                          type="button"
+                                        >
+                                          <span
+                                            class="MuiIconButton-label-7"
+                                          >
+                                            <span
+                                              aria-hidden="true"
+                                              class="material-icons MuiIcon-root-11"
+                                              style="font-size: 16px;"
+                                            >
+                                              insert_link
+                                            </span>
+                                          </span>
+                                          <span
+                                            class="MuiTouchRipple-root-111"
+                                          />
+                                        </button>
+                                      </a>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>,
+                          }
+                        }
                       >
                         <div
                           className="sc-gqjmRU cUiTuu"
@@ -950,25 +1008,25 @@ exports[`Chat should not redirect to / 1`] = `
                                                                             center={true}
                                                                             classes={
                                                                               Object {
-                                                                                "child": "MuiTouchRipple-child-112",
-                                                                                "childLeaving": "MuiTouchRipple-childLeaving-113",
-                                                                                "childPulsate": "MuiTouchRipple-childPulsate-114",
-                                                                                "ripple": "MuiTouchRipple-ripple-109",
-                                                                                "ripplePulsate": "MuiTouchRipple-ripplePulsate-111",
-                                                                                "rippleVisible": "MuiTouchRipple-rippleVisible-110",
-                                                                                "root": "MuiTouchRipple-root-108",
+                                                                                "child": "MuiTouchRipple-child-115",
+                                                                                "childLeaving": "MuiTouchRipple-childLeaving-116",
+                                                                                "childPulsate": "MuiTouchRipple-childPulsate-117",
+                                                                                "ripple": "MuiTouchRipple-ripple-112",
+                                                                                "ripplePulsate": "MuiTouchRipple-ripplePulsate-114",
+                                                                                "rippleVisible": "MuiTouchRipple-rippleVisible-113",
+                                                                                "root": "MuiTouchRipple-root-111",
                                                                               }
                                                                             }
                                                                           >
                                                                             <TransitionGroup
                                                                               childFactory={[Function]}
-                                                                              className="MuiTouchRipple-root-108"
+                                                                              className="MuiTouchRipple-root-111"
                                                                               component="span"
                                                                               enter={true}
                                                                               exit={true}
                                                                             >
                                                                               <span
-                                                                                className="MuiTouchRipple-root-108"
+                                                                                className="MuiTouchRipple-root-111"
                                                                               />
                                                                             </TransitionGroup>
                                                                           </TouchRipple>
@@ -1037,9 +1095,11 @@ exports[`Chat should not redirect to / 1`] = `
                             id="message-input"
                             label="Message"
                             margin="normal"
+                            multiline={true}
                             name="message-input"
                             onChange={[Function]}
                             onKeyPress={[Function]}
+                            rowsMax="1"
                             value=""
                           >
                             <StyledComponent
@@ -1073,9 +1133,11 @@ exports[`Chat should not redirect to / 1`] = `
                               id="message-input"
                               label="Message"
                               margin="normal"
+                              multiline={true}
                               name="message-input"
                               onChange={[Function]}
                               onKeyPress={[Function]}
+                              rowsMax="1"
                               value=""
                             >
                               <TextField
@@ -1084,10 +1146,12 @@ exports[`Chat should not redirect to / 1`] = `
                                 id="message-input"
                                 label="Message"
                                 margin="normal"
+                                multiline={true}
                                 name="message-input"
                                 onChange={[Function]}
                                 onKeyPress={[Function]}
                                 required={false}
+                                rowsMax="1"
                                 select={false}
                                 value=""
                                 variant="standard"
@@ -1256,8 +1320,10 @@ exports[`Chat should not redirect to / 1`] = `
                                       <WithStyles(Input)
                                         autoFocus={true}
                                         id="message-input"
+                                        multiline={true}
                                         name="message-input"
                                         onChange={[Function]}
+                                        rowsMax="1"
                                         value=""
                                       >
                                         <Input
@@ -1280,8 +1346,10 @@ exports[`Chat should not redirect to / 1`] = `
                                             }
                                           }
                                           id="message-input"
+                                          multiline={true}
                                           name="message-input"
                                           onChange={[Function]}
+                                          rowsMax="1"
                                           value=""
                                         >
                                           <WithStyles(WithFormControlContext(InputBase))
@@ -1306,9 +1374,10 @@ exports[`Chat should not redirect to / 1`] = `
                                             fullWidth={false}
                                             id="message-input"
                                             inputComponent="input"
-                                            multiline={false}
+                                            multiline={true}
                                             name="message-input"
                                             onChange={[Function]}
+                                            rowsMax="1"
                                             type="text"
                                             value=""
                                           >
@@ -1338,9 +1407,10 @@ exports[`Chat should not redirect to / 1`] = `
                                               fullWidth={false}
                                               id="message-input"
                                               inputComponent="input"
-                                              multiline={false}
+                                              multiline={true}
                                               name="message-input"
                                               onChange={[Function]}
+                                              rowsMax="1"
                                               type="text"
                                               value=""
                                             >
@@ -1386,20 +1456,21 @@ exports[`Chat should not redirect to / 1`] = `
                                                     "variant": "standard",
                                                   }
                                                 }
-                                                multiline={false}
+                                                multiline={true}
                                                 name="message-input"
                                                 onChange={[Function]}
+                                                rowsMax="1"
                                                 type="text"
                                                 value=""
                                               >
                                                 <div
-                                                  className="MuiInputBase-root-91 MuiInput-root-78 MuiInput-underline-82 MuiInputBase-formControl-92 MuiInput-formControl-79"
+                                                  className="MuiInputBase-root-91 MuiInput-root-78 MuiInput-underline-82 MuiInputBase-formControl-92 MuiInput-formControl-79 MuiInputBase-multiline-99 MuiInput-multiline-84"
                                                   onClick={[Function]}
                                                 >
-                                                  <input
+                                                  <WithStyles(Textarea)
                                                     aria-invalid={false}
                                                     autoFocus={true}
-                                                    className="MuiInputBase-input-101 MuiInput-input-86"
+                                                    className="MuiInputBase-input-101 MuiInput-input-86 MuiInputBase-inputMultiline-103 MuiInput-inputMultiline-88"
                                                     disabled={false}
                                                     id="message-input"
                                                     name="message-input"
@@ -1407,9 +1478,78 @@ exports[`Chat should not redirect to / 1`] = `
                                                     onChange={[Function]}
                                                     onFocus={[Function]}
                                                     required={false}
-                                                    type="text"
+                                                    rowsMax="1"
+                                                    textareaRef={[Function]}
                                                     value=""
-                                                  />
+                                                  >
+                                                    <Textarea
+                                                      aria-invalid={false}
+                                                      autoFocus={true}
+                                                      className="MuiInputBase-input-101 MuiInput-input-86 MuiInputBase-inputMultiline-103 MuiInput-inputMultiline-88"
+                                                      classes={
+                                                        Object {
+                                                          "root": "MuiPrivateTextarea-root-108",
+                                                          "shadow": "MuiPrivateTextarea-shadow-110",
+                                                          "textarea": "MuiPrivateTextarea-textarea-109",
+                                                        }
+                                                      }
+                                                      disabled={false}
+                                                      id="message-input"
+                                                      name="message-input"
+                                                      onBlur={[Function]}
+                                                      onChange={[Function]}
+                                                      onFocus={[Function]}
+                                                      required={false}
+                                                      rows={1}
+                                                      rowsMax="1"
+                                                      textareaRef={[Function]}
+                                                      value=""
+                                                    >
+                                                      <div
+                                                        className="MuiPrivateTextarea-root-108"
+                                                      >
+                                                        <EventListener
+                                                          onResize={[Function]}
+                                                          target="window"
+                                                        />
+                                                        <textarea
+                                                          aria-hidden="true"
+                                                          className="MuiPrivateTextarea-textarea-109 MuiPrivateTextarea-shadow-110"
+                                                          readOnly={true}
+                                                          rows="1"
+                                                          tabIndex={-1}
+                                                          value=""
+                                                        />
+                                                        <textarea
+                                                          aria-hidden="true"
+                                                          className="MuiPrivateTextarea-textarea-109 MuiPrivateTextarea-shadow-110"
+                                                          readOnly={true}
+                                                          rows={1}
+                                                          tabIndex={-1}
+                                                          value=""
+                                                        />
+                                                        <textarea
+                                                          aria-invalid={false}
+                                                          autoFocus={true}
+                                                          className="MuiPrivateTextarea-textarea-109 MuiInputBase-input-101 MuiInput-input-86 MuiInputBase-inputMultiline-103 MuiInput-inputMultiline-88"
+                                                          disabled={false}
+                                                          id="message-input"
+                                                          name="message-input"
+                                                          onBlur={[Function]}
+                                                          onChange={[Function]}
+                                                          onFocus={[Function]}
+                                                          required={false}
+                                                          rows={1}
+                                                          style={
+                                                            Object {
+                                                              "height": 19,
+                                                            }
+                                                          }
+                                                          value=""
+                                                        />
+                                                      </div>
+                                                    </Textarea>
+                                                  </WithStyles(Textarea)>
                                                 </div>
                                               </InputBase>
                                             </WithFormControlContext(InputBase)>
@@ -1627,7 +1767,65 @@ exports[`Chat should redirect to / 1`] = `
                             "withComponent": [Function],
                           }
                         }
-                        forwardedRef={null}
+                        forwardedRef={
+                          Object {
+                            "current": <div
+                              class="sc-gqjmRU cUiTuu"
+                            >
+                              <div
+                                class="sc-ifAKCX hkAyvq"
+                              >
+                                <div
+                                  class="sc-EHOje hsXxjJ"
+                                >
+                                  <div
+                                    class="sc-gzVnrw gDmTXO"
+                                  >
+                                    <div
+                                      class="sc-bZQynM gNQKpL"
+                                    >
+                                      <p>
+                                        February 5th 2019, 12:24:29 pm
+                                      </p>
+                                    </div>
+                                    <p>
+                                      undefined created chat.
+                                    </p>
+                                    <div
+                                      class="sc-htoDjs dCWZkl"
+                                    >
+                                      <a
+                                        class=""
+                                      >
+                                        <button
+                                          class="MuiButtonBase-root-8 MuiIconButton-root-2 sc-jTzLTM kokRiH"
+                                          id="share-link"
+                                          tabindex="0"
+                                          type="button"
+                                        >
+                                          <span
+                                            class="MuiIconButton-label-7"
+                                          >
+                                            <span
+                                              aria-hidden="true"
+                                              class="material-icons MuiIcon-root-11"
+                                              style="font-size: 16px;"
+                                            >
+                                              insert_link
+                                            </span>
+                                          </span>
+                                          <span
+                                            class="MuiTouchRipple-root-111"
+                                          />
+                                        </button>
+                                      </a>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>,
+                          }
+                        }
                       >
                         <div
                           className="sc-gqjmRU cUiTuu"
@@ -2417,25 +2615,25 @@ exports[`Chat should redirect to / 1`] = `
                                                                             center={true}
                                                                             classes={
                                                                               Object {
-                                                                                "child": "MuiTouchRipple-child-112",
-                                                                                "childLeaving": "MuiTouchRipple-childLeaving-113",
-                                                                                "childPulsate": "MuiTouchRipple-childPulsate-114",
-                                                                                "ripple": "MuiTouchRipple-ripple-109",
-                                                                                "ripplePulsate": "MuiTouchRipple-ripplePulsate-111",
-                                                                                "rippleVisible": "MuiTouchRipple-rippleVisible-110",
-                                                                                "root": "MuiTouchRipple-root-108",
+                                                                                "child": "MuiTouchRipple-child-115",
+                                                                                "childLeaving": "MuiTouchRipple-childLeaving-116",
+                                                                                "childPulsate": "MuiTouchRipple-childPulsate-117",
+                                                                                "ripple": "MuiTouchRipple-ripple-112",
+                                                                                "ripplePulsate": "MuiTouchRipple-ripplePulsate-114",
+                                                                                "rippleVisible": "MuiTouchRipple-rippleVisible-113",
+                                                                                "root": "MuiTouchRipple-root-111",
                                                                               }
                                                                             }
                                                                           >
                                                                             <TransitionGroup
                                                                               childFactory={[Function]}
-                                                                              className="MuiTouchRipple-root-108"
+                                                                              className="MuiTouchRipple-root-111"
                                                                               component="span"
                                                                               enter={true}
                                                                               exit={true}
                                                                             >
                                                                               <span
-                                                                                className="MuiTouchRipple-root-108"
+                                                                                className="MuiTouchRipple-root-111"
                                                                               />
                                                                             </TransitionGroup>
                                                                           </TouchRipple>
@@ -2504,9 +2702,11 @@ exports[`Chat should redirect to / 1`] = `
                             id="message-input"
                             label="Message"
                             margin="normal"
+                            multiline={true}
                             name="message-input"
                             onChange={[Function]}
                             onKeyPress={[Function]}
+                            rowsMax="1"
                             value=""
                           >
                             <StyledComponent
@@ -2540,9 +2740,11 @@ exports[`Chat should redirect to / 1`] = `
                               id="message-input"
                               label="Message"
                               margin="normal"
+                              multiline={true}
                               name="message-input"
                               onChange={[Function]}
                               onKeyPress={[Function]}
+                              rowsMax="1"
                               value=""
                             >
                               <TextField
@@ -2551,10 +2753,12 @@ exports[`Chat should redirect to / 1`] = `
                                 id="message-input"
                                 label="Message"
                                 margin="normal"
+                                multiline={true}
                                 name="message-input"
                                 onChange={[Function]}
                                 onKeyPress={[Function]}
                                 required={false}
+                                rowsMax="1"
                                 select={false}
                                 value=""
                                 variant="standard"
@@ -2723,8 +2927,10 @@ exports[`Chat should redirect to / 1`] = `
                                       <WithStyles(Input)
                                         autoFocus={true}
                                         id="message-input"
+                                        multiline={true}
                                         name="message-input"
                                         onChange={[Function]}
+                                        rowsMax="1"
                                         value=""
                                       >
                                         <Input
@@ -2747,8 +2953,10 @@ exports[`Chat should redirect to / 1`] = `
                                             }
                                           }
                                           id="message-input"
+                                          multiline={true}
                                           name="message-input"
                                           onChange={[Function]}
+                                          rowsMax="1"
                                           value=""
                                         >
                                           <WithStyles(WithFormControlContext(InputBase))
@@ -2773,9 +2981,10 @@ exports[`Chat should redirect to / 1`] = `
                                             fullWidth={false}
                                             id="message-input"
                                             inputComponent="input"
-                                            multiline={false}
+                                            multiline={true}
                                             name="message-input"
                                             onChange={[Function]}
+                                            rowsMax="1"
                                             type="text"
                                             value=""
                                           >
@@ -2805,9 +3014,10 @@ exports[`Chat should redirect to / 1`] = `
                                               fullWidth={false}
                                               id="message-input"
                                               inputComponent="input"
-                                              multiline={false}
+                                              multiline={true}
                                               name="message-input"
                                               onChange={[Function]}
+                                              rowsMax="1"
                                               type="text"
                                               value=""
                                             >
@@ -2853,20 +3063,21 @@ exports[`Chat should redirect to / 1`] = `
                                                     "variant": "standard",
                                                   }
                                                 }
-                                                multiline={false}
+                                                multiline={true}
                                                 name="message-input"
                                                 onChange={[Function]}
+                                                rowsMax="1"
                                                 type="text"
                                                 value=""
                                               >
                                                 <div
-                                                  className="MuiInputBase-root-91 MuiInput-root-78 MuiInput-underline-82 MuiInputBase-formControl-92 MuiInput-formControl-79"
+                                                  className="MuiInputBase-root-91 MuiInput-root-78 MuiInput-underline-82 MuiInputBase-formControl-92 MuiInput-formControl-79 MuiInputBase-multiline-99 MuiInput-multiline-84"
                                                   onClick={[Function]}
                                                 >
-                                                  <input
+                                                  <WithStyles(Textarea)
                                                     aria-invalid={false}
                                                     autoFocus={true}
-                                                    className="MuiInputBase-input-101 MuiInput-input-86"
+                                                    className="MuiInputBase-input-101 MuiInput-input-86 MuiInputBase-inputMultiline-103 MuiInput-inputMultiline-88"
                                                     disabled={false}
                                                     id="message-input"
                                                     name="message-input"
@@ -2874,9 +3085,78 @@ exports[`Chat should redirect to / 1`] = `
                                                     onChange={[Function]}
                                                     onFocus={[Function]}
                                                     required={false}
-                                                    type="text"
+                                                    rowsMax="1"
+                                                    textareaRef={[Function]}
                                                     value=""
-                                                  />
+                                                  >
+                                                    <Textarea
+                                                      aria-invalid={false}
+                                                      autoFocus={true}
+                                                      className="MuiInputBase-input-101 MuiInput-input-86 MuiInputBase-inputMultiline-103 MuiInput-inputMultiline-88"
+                                                      classes={
+                                                        Object {
+                                                          "root": "MuiPrivateTextarea-root-108",
+                                                          "shadow": "MuiPrivateTextarea-shadow-110",
+                                                          "textarea": "MuiPrivateTextarea-textarea-109",
+                                                        }
+                                                      }
+                                                      disabled={false}
+                                                      id="message-input"
+                                                      name="message-input"
+                                                      onBlur={[Function]}
+                                                      onChange={[Function]}
+                                                      onFocus={[Function]}
+                                                      required={false}
+                                                      rows={1}
+                                                      rowsMax="1"
+                                                      textareaRef={[Function]}
+                                                      value=""
+                                                    >
+                                                      <div
+                                                        className="MuiPrivateTextarea-root-108"
+                                                      >
+                                                        <EventListener
+                                                          onResize={[Function]}
+                                                          target="window"
+                                                        />
+                                                        <textarea
+                                                          aria-hidden="true"
+                                                          className="MuiPrivateTextarea-textarea-109 MuiPrivateTextarea-shadow-110"
+                                                          readOnly={true}
+                                                          rows="1"
+                                                          tabIndex={-1}
+                                                          value=""
+                                                        />
+                                                        <textarea
+                                                          aria-hidden="true"
+                                                          className="MuiPrivateTextarea-textarea-109 MuiPrivateTextarea-shadow-110"
+                                                          readOnly={true}
+                                                          rows={1}
+                                                          tabIndex={-1}
+                                                          value=""
+                                                        />
+                                                        <textarea
+                                                          aria-invalid={false}
+                                                          autoFocus={true}
+                                                          className="MuiPrivateTextarea-textarea-109 MuiInputBase-input-101 MuiInput-input-86 MuiInputBase-inputMultiline-103 MuiInput-inputMultiline-88"
+                                                          disabled={false}
+                                                          id="message-input"
+                                                          name="message-input"
+                                                          onBlur={[Function]}
+                                                          onChange={[Function]}
+                                                          onFocus={[Function]}
+                                                          required={false}
+                                                          rows={1}
+                                                          style={
+                                                            Object {
+                                                              "height": 19,
+                                                            }
+                                                          }
+                                                          value=""
+                                                        />
+                                                      </div>
+                                                    </Textarea>
+                                                  </WithStyles(Textarea)>
                                                 </div>
                                               </InputBase>
                                             </WithFormControlContext(InputBase)>
@@ -3071,7 +3351,143 @@ exports[`Chat should render connected component with messages 1`] = `
                             "withComponent": [Function],
                           }
                         }
-                        forwardedRef={null}
+                        forwardedRef={
+                          Object {
+                            "current": <div
+                              class="sc-gqjmRU cUiTuu"
+                            >
+                              <div
+                                class="sc-ifAKCX hkAyvq"
+                              >
+                                <div
+                                  class="sc-EHOje hsXxjJ"
+                                >
+                                  <div
+                                    class="sc-gzVnrw gDmTXO"
+                                  >
+                                    <div
+                                      class="sc-bZQynM gNQKpL"
+                                    >
+                                      <p>
+                                        February 5th 2019, 12:24:29 pm
+                                      </p>
+                                    </div>
+                                    <p>
+                                      Dude created chat.
+                                    </p>
+                                    <div
+                                      class="sc-htoDjs dCWZkl"
+                                    >
+                                      <a
+                                        class=""
+                                      >
+                                        <button
+                                          class="MuiButtonBase-root-8 MuiIconButton-root-2 sc-jTzLTM kokRiH"
+                                          id="share-link"
+                                          tabindex="0"
+                                          type="button"
+                                        >
+                                          <span
+                                            class="MuiIconButton-label-7"
+                                          >
+                                            <span
+                                              aria-hidden="true"
+                                              class="material-icons MuiIcon-root-11"
+                                              style="font-size: 16px;"
+                                            >
+                                              insert_link
+                                            </span>
+                                          </span>
+                                          <span
+                                            class="MuiTouchRipple-root-111"
+                                          />
+                                        </button>
+                                      </a>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div
+                                class="sc-bdVaJa ViWBm"
+                                type="own"
+                              >
+                                <span
+                                  aria-hidden="true"
+                                  class="material-icons MuiIcon-root-11"
+                                  style="font-size: 50px;"
+                                >
+                                  metal
+                                </span>
+                                <div
+                                  class="sc-bwzfXH eKYpts"
+                                  type="own"
+                                >
+                                  <div
+                                    class="sc-bxivhb bFaqhi"
+                                    type="own"
+                                  >
+                                    <div
+                                      class="sc-htpNat dUjCyT"
+                                    >
+                                      <p>
+                                        February 5th 2019, 12:24:29 pm
+                                      </p>
+                                    </div>
+                                    <p
+                                      class="MuiTypography-root-20 MuiTypography-body1-29"
+                                    >
+                                      <b>
+                                        Dude
+                                      </b>
+                                    </p>
+                                    <span>
+                                      How are you doing?
+                                    </span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div
+                                class="sc-bdVaJa llljKx"
+                                type="peer"
+                              >
+                                <span
+                                  aria-hidden="true"
+                                  class="material-icons MuiIcon-root-11"
+                                  style="font-size: 50px;"
+                                >
+                                  rock
+                                </span>
+                                <div
+                                  class="sc-bwzfXH kvCxrc"
+                                  type="peer"
+                                >
+                                  <div
+                                    class="sc-bxivhb gqaAOW"
+                                    type="peer"
+                                  >
+                                    <div
+                                      class="sc-htpNat dUjCyT"
+                                    >
+                                      <p>
+                                        February 5th 2019, 12:24:29 pm
+                                      </p>
+                                    </div>
+                                    <p
+                                      class="MuiTypography-root-20 MuiTypography-body1-29"
+                                    >
+                                      <b>
+                                        David Gilmour
+                                      </b>
+                                    </p>
+                                    <span>
+                                      Confortably numb.
+                                    </span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>,
+                          }
+                        }
                       >
                         <div
                           className="sc-gqjmRU cUiTuu"
@@ -3861,25 +4277,25 @@ exports[`Chat should render connected component with messages 1`] = `
                                                                             center={true}
                                                                             classes={
                                                                               Object {
-                                                                                "child": "MuiTouchRipple-child-112",
-                                                                                "childLeaving": "MuiTouchRipple-childLeaving-113",
-                                                                                "childPulsate": "MuiTouchRipple-childPulsate-114",
-                                                                                "ripple": "MuiTouchRipple-ripple-109",
-                                                                                "ripplePulsate": "MuiTouchRipple-ripplePulsate-111",
-                                                                                "rippleVisible": "MuiTouchRipple-rippleVisible-110",
-                                                                                "root": "MuiTouchRipple-root-108",
+                                                                                "child": "MuiTouchRipple-child-115",
+                                                                                "childLeaving": "MuiTouchRipple-childLeaving-116",
+                                                                                "childPulsate": "MuiTouchRipple-childPulsate-117",
+                                                                                "ripple": "MuiTouchRipple-ripple-112",
+                                                                                "ripplePulsate": "MuiTouchRipple-ripplePulsate-114",
+                                                                                "rippleVisible": "MuiTouchRipple-rippleVisible-113",
+                                                                                "root": "MuiTouchRipple-root-111",
                                                                               }
                                                                             }
                                                                           >
                                                                             <TransitionGroup
                                                                               childFactory={[Function]}
-                                                                              className="MuiTouchRipple-root-108"
+                                                                              className="MuiTouchRipple-root-111"
                                                                               component="span"
                                                                               enter={true}
                                                                               exit={true}
                                                                             >
                                                                               <span
-                                                                                className="MuiTouchRipple-root-108"
+                                                                                className="MuiTouchRipple-root-111"
                                                                               />
                                                                             </TransitionGroup>
                                                                           </TouchRipple>
@@ -5382,9 +5798,11 @@ exports[`Chat should render connected component with messages 1`] = `
                             id="message-input"
                             label="Message"
                             margin="normal"
+                            multiline={true}
                             name="message-input"
                             onChange={[Function]}
                             onKeyPress={[Function]}
+                            rowsMax="1"
                             value=""
                           >
                             <StyledComponent
@@ -5418,9 +5836,11 @@ exports[`Chat should render connected component with messages 1`] = `
                               id="message-input"
                               label="Message"
                               margin="normal"
+                              multiline={true}
                               name="message-input"
                               onChange={[Function]}
                               onKeyPress={[Function]}
+                              rowsMax="1"
                               value=""
                             >
                               <TextField
@@ -5429,10 +5849,12 @@ exports[`Chat should render connected component with messages 1`] = `
                                 id="message-input"
                                 label="Message"
                                 margin="normal"
+                                multiline={true}
                                 name="message-input"
                                 onChange={[Function]}
                                 onKeyPress={[Function]}
                                 required={false}
+                                rowsMax="1"
                                 select={false}
                                 value=""
                                 variant="standard"
@@ -5601,8 +6023,10 @@ exports[`Chat should render connected component with messages 1`] = `
                                       <WithStyles(Input)
                                         autoFocus={true}
                                         id="message-input"
+                                        multiline={true}
                                         name="message-input"
                                         onChange={[Function]}
+                                        rowsMax="1"
                                         value=""
                                       >
                                         <Input
@@ -5625,8 +6049,10 @@ exports[`Chat should render connected component with messages 1`] = `
                                             }
                                           }
                                           id="message-input"
+                                          multiline={true}
                                           name="message-input"
                                           onChange={[Function]}
+                                          rowsMax="1"
                                           value=""
                                         >
                                           <WithStyles(WithFormControlContext(InputBase))
@@ -5651,9 +6077,10 @@ exports[`Chat should render connected component with messages 1`] = `
                                             fullWidth={false}
                                             id="message-input"
                                             inputComponent="input"
-                                            multiline={false}
+                                            multiline={true}
                                             name="message-input"
                                             onChange={[Function]}
+                                            rowsMax="1"
                                             type="text"
                                             value=""
                                           >
@@ -5683,9 +6110,10 @@ exports[`Chat should render connected component with messages 1`] = `
                                               fullWidth={false}
                                               id="message-input"
                                               inputComponent="input"
-                                              multiline={false}
+                                              multiline={true}
                                               name="message-input"
                                               onChange={[Function]}
+                                              rowsMax="1"
                                               type="text"
                                               value=""
                                             >
@@ -5731,20 +6159,21 @@ exports[`Chat should render connected component with messages 1`] = `
                                                     "variant": "standard",
                                                   }
                                                 }
-                                                multiline={false}
+                                                multiline={true}
                                                 name="message-input"
                                                 onChange={[Function]}
+                                                rowsMax="1"
                                                 type="text"
                                                 value=""
                                               >
                                                 <div
-                                                  className="MuiInputBase-root-91 MuiInput-root-78 MuiInput-underline-82 MuiInputBase-formControl-92 MuiInput-formControl-79"
+                                                  className="MuiInputBase-root-91 MuiInput-root-78 MuiInput-underline-82 MuiInputBase-formControl-92 MuiInput-formControl-79 MuiInputBase-multiline-99 MuiInput-multiline-84"
                                                   onClick={[Function]}
                                                 >
-                                                  <input
+                                                  <WithStyles(Textarea)
                                                     aria-invalid={false}
                                                     autoFocus={true}
-                                                    className="MuiInputBase-input-101 MuiInput-input-86"
+                                                    className="MuiInputBase-input-101 MuiInput-input-86 MuiInputBase-inputMultiline-103 MuiInput-inputMultiline-88"
                                                     disabled={false}
                                                     id="message-input"
                                                     name="message-input"
@@ -5752,9 +6181,78 @@ exports[`Chat should render connected component with messages 1`] = `
                                                     onChange={[Function]}
                                                     onFocus={[Function]}
                                                     required={false}
-                                                    type="text"
+                                                    rowsMax="1"
+                                                    textareaRef={[Function]}
                                                     value=""
-                                                  />
+                                                  >
+                                                    <Textarea
+                                                      aria-invalid={false}
+                                                      autoFocus={true}
+                                                      className="MuiInputBase-input-101 MuiInput-input-86 MuiInputBase-inputMultiline-103 MuiInput-inputMultiline-88"
+                                                      classes={
+                                                        Object {
+                                                          "root": "MuiPrivateTextarea-root-108",
+                                                          "shadow": "MuiPrivateTextarea-shadow-110",
+                                                          "textarea": "MuiPrivateTextarea-textarea-109",
+                                                        }
+                                                      }
+                                                      disabled={false}
+                                                      id="message-input"
+                                                      name="message-input"
+                                                      onBlur={[Function]}
+                                                      onChange={[Function]}
+                                                      onFocus={[Function]}
+                                                      required={false}
+                                                      rows={1}
+                                                      rowsMax="1"
+                                                      textareaRef={[Function]}
+                                                      value=""
+                                                    >
+                                                      <div
+                                                        className="MuiPrivateTextarea-root-108"
+                                                      >
+                                                        <EventListener
+                                                          onResize={[Function]}
+                                                          target="window"
+                                                        />
+                                                        <textarea
+                                                          aria-hidden="true"
+                                                          className="MuiPrivateTextarea-textarea-109 MuiPrivateTextarea-shadow-110"
+                                                          readOnly={true}
+                                                          rows="1"
+                                                          tabIndex={-1}
+                                                          value=""
+                                                        />
+                                                        <textarea
+                                                          aria-hidden="true"
+                                                          className="MuiPrivateTextarea-textarea-109 MuiPrivateTextarea-shadow-110"
+                                                          readOnly={true}
+                                                          rows={1}
+                                                          tabIndex={-1}
+                                                          value=""
+                                                        />
+                                                        <textarea
+                                                          aria-invalid={false}
+                                                          autoFocus={true}
+                                                          className="MuiPrivateTextarea-textarea-109 MuiInputBase-input-101 MuiInput-input-86 MuiInputBase-inputMultiline-103 MuiInput-inputMultiline-88"
+                                                          disabled={false}
+                                                          id="message-input"
+                                                          name="message-input"
+                                                          onBlur={[Function]}
+                                                          onChange={[Function]}
+                                                          onFocus={[Function]}
+                                                          required={false}
+                                                          rows={1}
+                                                          style={
+                                                            Object {
+                                                              "height": 19,
+                                                            }
+                                                          }
+                                                          value=""
+                                                        />
+                                                      </div>
+                                                    </Textarea>
+                                                  </WithStyles(Textarea)>
                                                 </div>
                                               </InputBase>
                                             </WithFormControlContext(InputBase)>
@@ -5937,7 +6435,114 @@ exports[`Chat should render connected component with writing notifications 1`] =
                             "withComponent": [Function],
                           }
                         }
-                        forwardedRef={null}
+                        forwardedRef={
+                          Object {
+                            "current": <div
+                              class="sc-gqjmRU cUiTuu"
+                            >
+                              <div
+                                class="sc-ifAKCX hkAyvq"
+                              >
+                                <div
+                                  class="sc-EHOje hsXxjJ"
+                                >
+                                  <div
+                                    class="sc-gzVnrw gDmTXO"
+                                  >
+                                    <div
+                                      class="sc-bZQynM gNQKpL"
+                                    >
+                                      <p>
+                                        February 5th 2019, 12:24:29 pm
+                                      </p>
+                                    </div>
+                                    <p>
+                                      Dude created chat.
+                                    </p>
+                                    <div
+                                      class="sc-htoDjs dCWZkl"
+                                    >
+                                      <a
+                                        class=""
+                                      >
+                                        <button
+                                          class="MuiButtonBase-root-8 MuiIconButton-root-2 sc-jTzLTM kokRiH"
+                                          id="share-link"
+                                          tabindex="0"
+                                          type="button"
+                                        >
+                                          <span
+                                            class="MuiIconButton-label-7"
+                                          >
+                                            <span
+                                              aria-hidden="true"
+                                              class="material-icons MuiIcon-root-11"
+                                              style="font-size: 16px;"
+                                            >
+                                              insert_link
+                                            </span>
+                                          </span>
+                                          <span
+                                            class="MuiTouchRipple-root-111"
+                                          />
+                                        </button>
+                                      </a>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div
+                                class="sc-bdVaJa llljKx"
+                                type="peer"
+                              >
+                                <span
+                                  aria-hidden="true"
+                                  class="material-icons MuiIcon-root-11"
+                                  style="font-size: 50px;"
+                                >
+                                  rock
+                                </span>
+                                <div
+                                  class="sc-bwzfXH kvCxrc"
+                                  type="peer"
+                                >
+                                  <div
+                                    class="sc-bxivhb gqaAOW"
+                                    type="peer"
+                                  >
+                                    <div
+                                      class="sc-htpNat dUjCyT"
+                                    >
+                                      <p>
+                                        February 5th 2019, 12:24:29 pm
+                                      </p>
+                                    </div>
+                                    <p
+                                      class="MuiTypography-root-20 MuiTypography-body1-29"
+                                    >
+                                      <b>
+                                        David Gilmour
+                                      </b>
+                                    </p>
+                                    <span>
+                                      <div
+                                        class="MuiLinearProgress-root-118 MuiLinearProgress-colorPrimary-119 MuiLinearProgress-indeterminate-122"
+                                        role="progressbar"
+                                      >
+                                        <div
+                                          class="MuiLinearProgress-bar-128 MuiLinearProgress-barColorPrimary-129 MuiLinearProgress-bar1Indeterminate-131"
+                                        />
+                                        <div
+                                          class="MuiLinearProgress-bar-128 MuiLinearProgress-barColorPrimary-129 MuiLinearProgress-bar2Indeterminate-134"
+                                        />
+                                      </div>
+                                    </span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>,
+                          }
+                        }
                       >
                         <div
                           className="sc-gqjmRU cUiTuu"
@@ -6727,25 +7332,25 @@ exports[`Chat should render connected component with writing notifications 1`] =
                                                                             center={true}
                                                                             classes={
                                                                               Object {
-                                                                                "child": "MuiTouchRipple-child-112",
-                                                                                "childLeaving": "MuiTouchRipple-childLeaving-113",
-                                                                                "childPulsate": "MuiTouchRipple-childPulsate-114",
-                                                                                "ripple": "MuiTouchRipple-ripple-109",
-                                                                                "ripplePulsate": "MuiTouchRipple-ripplePulsate-111",
-                                                                                "rippleVisible": "MuiTouchRipple-rippleVisible-110",
-                                                                                "root": "MuiTouchRipple-root-108",
+                                                                                "child": "MuiTouchRipple-child-115",
+                                                                                "childLeaving": "MuiTouchRipple-childLeaving-116",
+                                                                                "childPulsate": "MuiTouchRipple-childPulsate-117",
+                                                                                "ripple": "MuiTouchRipple-ripple-112",
+                                                                                "ripplePulsate": "MuiTouchRipple-ripplePulsate-114",
+                                                                                "rippleVisible": "MuiTouchRipple-rippleVisible-113",
+                                                                                "root": "MuiTouchRipple-root-111",
                                                                               }
                                                                             }
                                                                           >
                                                                             <TransitionGroup
                                                                               childFactory={[Function]}
-                                                                              className="MuiTouchRipple-root-108"
+                                                                              className="MuiTouchRipple-root-111"
                                                                               component="span"
                                                                               enter={true}
                                                                               exit={true}
                                                                             >
                                                                               <span
-                                                                                className="MuiTouchRipple-root-108"
+                                                                                className="MuiTouchRipple-root-111"
                                                                               />
                                                                             </TransitionGroup>
                                                                           </TouchRipple>
@@ -7482,39 +8087,39 @@ exports[`Chat should render connected component with writing notifications 1`] =
                                                   <LinearProgress
                                                     classes={
                                                       Object {
-                                                        "bar": "MuiLinearProgress-bar-125",
-                                                        "bar1Buffer": "MuiLinearProgress-bar1Buffer-130",
-                                                        "bar1Determinate": "MuiLinearProgress-bar1Determinate-129",
-                                                        "bar1Indeterminate": "MuiLinearProgress-bar1Indeterminate-128",
-                                                        "bar2Buffer": "MuiLinearProgress-bar2Buffer-132",
-                                                        "bar2Indeterminate": "MuiLinearProgress-bar2Indeterminate-131",
-                                                        "barColorPrimary": "MuiLinearProgress-barColorPrimary-126",
-                                                        "barColorSecondary": "MuiLinearProgress-barColorSecondary-127",
-                                                        "buffer": "MuiLinearProgress-buffer-120",
-                                                        "colorPrimary": "MuiLinearProgress-colorPrimary-116",
-                                                        "colorSecondary": "MuiLinearProgress-colorSecondary-117",
-                                                        "dashed": "MuiLinearProgress-dashed-122",
-                                                        "dashedColorPrimary": "MuiLinearProgress-dashedColorPrimary-123",
-                                                        "dashedColorSecondary": "MuiLinearProgress-dashedColorSecondary-124",
-                                                        "determinate": "MuiLinearProgress-determinate-118",
-                                                        "indeterminate": "MuiLinearProgress-indeterminate-119",
-                                                        "query": "MuiLinearProgress-query-121",
-                                                        "root": "MuiLinearProgress-root-115",
+                                                        "bar": "MuiLinearProgress-bar-128",
+                                                        "bar1Buffer": "MuiLinearProgress-bar1Buffer-133",
+                                                        "bar1Determinate": "MuiLinearProgress-bar1Determinate-132",
+                                                        "bar1Indeterminate": "MuiLinearProgress-bar1Indeterminate-131",
+                                                        "bar2Buffer": "MuiLinearProgress-bar2Buffer-135",
+                                                        "bar2Indeterminate": "MuiLinearProgress-bar2Indeterminate-134",
+                                                        "barColorPrimary": "MuiLinearProgress-barColorPrimary-129",
+                                                        "barColorSecondary": "MuiLinearProgress-barColorSecondary-130",
+                                                        "buffer": "MuiLinearProgress-buffer-123",
+                                                        "colorPrimary": "MuiLinearProgress-colorPrimary-119",
+                                                        "colorSecondary": "MuiLinearProgress-colorSecondary-120",
+                                                        "dashed": "MuiLinearProgress-dashed-125",
+                                                        "dashedColorPrimary": "MuiLinearProgress-dashedColorPrimary-126",
+                                                        "dashedColorSecondary": "MuiLinearProgress-dashedColorSecondary-127",
+                                                        "determinate": "MuiLinearProgress-determinate-121",
+                                                        "indeterminate": "MuiLinearProgress-indeterminate-122",
+                                                        "query": "MuiLinearProgress-query-124",
+                                                        "root": "MuiLinearProgress-root-118",
                                                       }
                                                     }
                                                     color="primary"
                                                     variant="indeterminate"
                                                   >
                                                     <div
-                                                      className="MuiLinearProgress-root-115 MuiLinearProgress-colorPrimary-116 MuiLinearProgress-indeterminate-119"
+                                                      className="MuiLinearProgress-root-118 MuiLinearProgress-colorPrimary-119 MuiLinearProgress-indeterminate-122"
                                                       role="progressbar"
                                                     >
                                                       <div
-                                                        className="MuiLinearProgress-bar-125 MuiLinearProgress-barColorPrimary-126 MuiLinearProgress-bar1Indeterminate-128"
+                                                        className="MuiLinearProgress-bar-128 MuiLinearProgress-barColorPrimary-129 MuiLinearProgress-bar1Indeterminate-131"
                                                         style={Object {}}
                                                       />
                                                       <div
-                                                        className="MuiLinearProgress-bar-125 MuiLinearProgress-barColorPrimary-126 MuiLinearProgress-bar2Indeterminate-131"
+                                                        className="MuiLinearProgress-bar-128 MuiLinearProgress-barColorPrimary-129 MuiLinearProgress-bar2Indeterminate-134"
                                                         style={Object {}}
                                                       />
                                                     </div>
@@ -7572,9 +8177,11 @@ exports[`Chat should render connected component with writing notifications 1`] =
                             id="message-input"
                             label="Message"
                             margin="normal"
+                            multiline={true}
                             name="message-input"
                             onChange={[Function]}
                             onKeyPress={[Function]}
+                            rowsMax="1"
                             value=""
                           >
                             <StyledComponent
@@ -7608,9 +8215,11 @@ exports[`Chat should render connected component with writing notifications 1`] =
                               id="message-input"
                               label="Message"
                               margin="normal"
+                              multiline={true}
                               name="message-input"
                               onChange={[Function]}
                               onKeyPress={[Function]}
+                              rowsMax="1"
                               value=""
                             >
                               <TextField
@@ -7619,10 +8228,12 @@ exports[`Chat should render connected component with writing notifications 1`] =
                                 id="message-input"
                                 label="Message"
                                 margin="normal"
+                                multiline={true}
                                 name="message-input"
                                 onChange={[Function]}
                                 onKeyPress={[Function]}
                                 required={false}
+                                rowsMax="1"
                                 select={false}
                                 value=""
                                 variant="standard"
@@ -7791,8 +8402,10 @@ exports[`Chat should render connected component with writing notifications 1`] =
                                       <WithStyles(Input)
                                         autoFocus={true}
                                         id="message-input"
+                                        multiline={true}
                                         name="message-input"
                                         onChange={[Function]}
+                                        rowsMax="1"
                                         value=""
                                       >
                                         <Input
@@ -7815,8 +8428,10 @@ exports[`Chat should render connected component with writing notifications 1`] =
                                             }
                                           }
                                           id="message-input"
+                                          multiline={true}
                                           name="message-input"
                                           onChange={[Function]}
+                                          rowsMax="1"
                                           value=""
                                         >
                                           <WithStyles(WithFormControlContext(InputBase))
@@ -7841,9 +8456,10 @@ exports[`Chat should render connected component with writing notifications 1`] =
                                             fullWidth={false}
                                             id="message-input"
                                             inputComponent="input"
-                                            multiline={false}
+                                            multiline={true}
                                             name="message-input"
                                             onChange={[Function]}
+                                            rowsMax="1"
                                             type="text"
                                             value=""
                                           >
@@ -7873,9 +8489,10 @@ exports[`Chat should render connected component with writing notifications 1`] =
                                               fullWidth={false}
                                               id="message-input"
                                               inputComponent="input"
-                                              multiline={false}
+                                              multiline={true}
                                               name="message-input"
                                               onChange={[Function]}
+                                              rowsMax="1"
                                               type="text"
                                               value=""
                                             >
@@ -7921,20 +8538,21 @@ exports[`Chat should render connected component with writing notifications 1`] =
                                                     "variant": "standard",
                                                   }
                                                 }
-                                                multiline={false}
+                                                multiline={true}
                                                 name="message-input"
                                                 onChange={[Function]}
+                                                rowsMax="1"
                                                 type="text"
                                                 value=""
                                               >
                                                 <div
-                                                  className="MuiInputBase-root-91 MuiInput-root-78 MuiInput-underline-82 MuiInputBase-formControl-92 MuiInput-formControl-79"
+                                                  className="MuiInputBase-root-91 MuiInput-root-78 MuiInput-underline-82 MuiInputBase-formControl-92 MuiInput-formControl-79 MuiInputBase-multiline-99 MuiInput-multiline-84"
                                                   onClick={[Function]}
                                                 >
-                                                  <input
+                                                  <WithStyles(Textarea)
                                                     aria-invalid={false}
                                                     autoFocus={true}
-                                                    className="MuiInputBase-input-101 MuiInput-input-86"
+                                                    className="MuiInputBase-input-101 MuiInput-input-86 MuiInputBase-inputMultiline-103 MuiInput-inputMultiline-88"
                                                     disabled={false}
                                                     id="message-input"
                                                     name="message-input"
@@ -7942,9 +8560,78 @@ exports[`Chat should render connected component with writing notifications 1`] =
                                                     onChange={[Function]}
                                                     onFocus={[Function]}
                                                     required={false}
-                                                    type="text"
+                                                    rowsMax="1"
+                                                    textareaRef={[Function]}
                                                     value=""
-                                                  />
+                                                  >
+                                                    <Textarea
+                                                      aria-invalid={false}
+                                                      autoFocus={true}
+                                                      className="MuiInputBase-input-101 MuiInput-input-86 MuiInputBase-inputMultiline-103 MuiInput-inputMultiline-88"
+                                                      classes={
+                                                        Object {
+                                                          "root": "MuiPrivateTextarea-root-108",
+                                                          "shadow": "MuiPrivateTextarea-shadow-110",
+                                                          "textarea": "MuiPrivateTextarea-textarea-109",
+                                                        }
+                                                      }
+                                                      disabled={false}
+                                                      id="message-input"
+                                                      name="message-input"
+                                                      onBlur={[Function]}
+                                                      onChange={[Function]}
+                                                      onFocus={[Function]}
+                                                      required={false}
+                                                      rows={1}
+                                                      rowsMax="1"
+                                                      textareaRef={[Function]}
+                                                      value=""
+                                                    >
+                                                      <div
+                                                        className="MuiPrivateTextarea-root-108"
+                                                      >
+                                                        <EventListener
+                                                          onResize={[Function]}
+                                                          target="window"
+                                                        />
+                                                        <textarea
+                                                          aria-hidden="true"
+                                                          className="MuiPrivateTextarea-textarea-109 MuiPrivateTextarea-shadow-110"
+                                                          readOnly={true}
+                                                          rows="1"
+                                                          tabIndex={-1}
+                                                          value=""
+                                                        />
+                                                        <textarea
+                                                          aria-hidden="true"
+                                                          className="MuiPrivateTextarea-textarea-109 MuiPrivateTextarea-shadow-110"
+                                                          readOnly={true}
+                                                          rows={1}
+                                                          tabIndex={-1}
+                                                          value=""
+                                                        />
+                                                        <textarea
+                                                          aria-invalid={false}
+                                                          autoFocus={true}
+                                                          className="MuiPrivateTextarea-textarea-109 MuiInputBase-input-101 MuiInput-input-86 MuiInputBase-inputMultiline-103 MuiInput-inputMultiline-88"
+                                                          disabled={false}
+                                                          id="message-input"
+                                                          name="message-input"
+                                                          onBlur={[Function]}
+                                                          onChange={[Function]}
+                                                          onFocus={[Function]}
+                                                          required={false}
+                                                          rows={1}
+                                                          style={
+                                                            Object {
+                                                              "height": 19,
+                                                            }
+                                                          }
+                                                          value=""
+                                                        />
+                                                      </div>
+                                                    </Textarea>
+                                                  </WithStyles(Textarea)>
                                                 </div>
                                               </InputBase>
                                             </WithFormControlContext(InputBase)>
