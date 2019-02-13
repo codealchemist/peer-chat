@@ -12,10 +12,20 @@ import { initChannelHandlers } from './channelHandlers'
 
 export function getSignalingEventChannel (signaling) {
   return eventChannel(emitter => {
-    signaling.onRemoteSignal(data => {
-      console.log('signaling: got remote signal')
-      emitter({ type: 'remote_signal', data })
-    })
+    signaling
+      .onRemoteSignal(data => {
+        console.log('signaling: got remote signal')
+        emitter({ type: 'remote_signal', data })
+      })
+      .onOpen(() => {
+        console.log('signaling: connection open')
+        const data = {
+          id: signaling.id,
+          isInitiator: signaling.isInitiator,
+          shareUrl: signaling.shareUrl
+        }
+        emitter({ type: 'connection', data })
+      })
 
     return () => {
       console.log('Unsubscribe from signaling event channel.')
@@ -26,16 +36,9 @@ export function getSignalingEventChannel (signaling) {
 export function * init () {
   try {
     console.log('init signaling')
-    signaling.init()
-
-    console.log('success, id:', signaling.id)
-    yield put(
-      initSuccess({
-        id: signaling.id,
-        isInitiator: signaling.isInitiator,
-        shareUrl: signaling.shareUrl
-      })
-    )
+    signaling.init().onOpen(() => {
+      console.log('---- SIGNALING CHANNEL now OPEN!')
+    })
 
     const channel = getSignalingEventChannel(signaling)
     const { type, data } = yield take(channel)

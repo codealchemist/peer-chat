@@ -34,6 +34,9 @@ class Signaling {
     this.hub
       .subscribe(this.channelName)
       .on('data', message => this.onSignalMessage(message))
+      .on('open', () => {
+        if (typeof this.onOpenCallback === 'function') this.onOpenCallback()
+      })
 
     // If not the initiator, request offer to initiator.
     if (!this.isInitiator) {
@@ -80,6 +83,12 @@ class Signaling {
 
   onRemoteSignal (callback) {
     this.onRemoteSignalCallback = callback
+    return this
+  }
+
+  onOpen (callback) {
+    this.onOpenCallback = callback
+    return this
   }
 
   getInitiatorId () {
