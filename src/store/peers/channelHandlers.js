@@ -34,3 +34,16 @@ export const createRemotePeerChannelHandlers = {
     // TODO
   }
 }
+
+export const createLocalPeerChannelHandlers = {
+  signal: function * (data) {
+    yield put(setSignal(data)) // {signal, id}
+  },
+  data: function * (data) {
+    // TODO
+  },
+  error: function * (data) {
+    console.log('got error from localPeer event channel', data)
+    // TODO
+  }
+}

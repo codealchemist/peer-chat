@@ -15,7 +15,10 @@ import {
   setSignal
 } from './actions'
 import Peer from 'services/peer'
-import { createRemotePeerChannelHandlers } from './channelHandlers'
+import {
+  createRemotePeerChannelHandlers,
+  createLocalPeerChannelHandlers
+} from './channelHandlers'
 
 export function getRemotePeerEventChannel (remotePeer) {
   return eventChannel(emitter => {
@@ -117,24 +120,11 @@ export function * createLocalPeer ({ payload }) {
           data
         )
 
-        const handlers = {
-          signal: function * (data) {
-            yield put(setSignal(data)) // {signal, id}
-          },
-          data: function * (data) {
-            // TODO
-          },
-          error: function * (data) {
-            console.log('got error from localPeer event channel', data)
-            // TODO
-          }
-        }
-
-        if (!(type in handlers)) {
+        if (!(type in createLocalPeerChannelHandlers)) {
           console.log('There is no handler for remote peer data type:', type)
           return
         }
-        yield handlers[type](data)
+        yield createLocalPeerChannelHandlers[type](data)
       }
     } catch (e) {
       console.log('Event channel error', e)

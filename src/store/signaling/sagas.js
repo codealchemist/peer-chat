@@ -36,19 +36,19 @@ export function getSignalingEventChannel (signaling) {
 export function * init () {
   try {
     console.log('init signaling')
-    signaling.init().onOpen(() => {
-      console.log('---- SIGNALING CHANNEL now OPEN!')
-    })
+    signaling.init()
 
     const channel = getSignalingEventChannel(signaling)
-    const { type, data } = yield take(channel)
-    console.log(`Got signaling CHANNEL "${type}" DATA`, data)
+    while (true) {
+      const { type, data } = yield take(channel)
+      console.log(`Got signaling CHANNEL "${type}" DATA`, data)
 
-    if (!(type in initChannelHandlers)) {
-      console.log('There is no handler for signaling data type:', type)
-      return
+      if (!(type in initChannelHandlers)) {
+        console.log('There is no handler for signaling data type:', type)
+        return
+      }
+      yield initChannelHandlers[type](data)
     }
-    yield initChannelHandlers[type](data)
   } catch (e) {
     yield put(initFailed({ error: e.message || 'Unknown error.' }))
   }
