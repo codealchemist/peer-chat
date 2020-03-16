@@ -7,7 +7,7 @@ P2P chat over WebRTC.
 
 ## Live app
 
-[https://chateer.tk](https://chateer.tk)
+[http://chateer.herokuapp.com/](http://chateer.herokuapp.com/)
 
 ## Demo video
 
