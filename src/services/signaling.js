@@ -66,7 +66,6 @@ class Signaling {
     })
 
     this.channel.subscribe('message', (raw) => {
-      log('--- DEBUG', { raw })
       const { data } = raw
       this.onSignalMessage(data)
     })
