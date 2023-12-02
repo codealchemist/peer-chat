@@ -42,12 +42,12 @@ export class Chat extends React.PureComponent {
     message: ''
   }
 
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.$messages = React.createRef()
   }
 
-  componentDidMount() {
+  componentDidMount () {
     // Redirect to welcome page if user not set.
     const { user, history } = this.props
     if (!user.id) {
@@ -55,13 +55,13 @@ export class Chat extends React.PureComponent {
     }
   }
 
-  componentDidUpdate() {
+  componentDidUpdate () {
     const $el = this.$messages.current
     const scrollHeight = $el.scrollHeight
     $el.scrollTop = scrollHeight
   }
 
-  scheduleWritingNotification(value) {
+  scheduleWritingNotification (value) {
     // Clear writing notification if the user cleared the message.
     // Also send a clearWritingNotification message to remote peer.
     if (!value.trim()) {
@@ -105,13 +105,13 @@ export class Chat extends React.PureComponent {
     this.writingNotificationTimeout = null
   }
 
-  getInitNofication() {
+  getInitNofication () {
     const { user, isInitiator, shareUrl } = this.props
     if (isInitiator) return InitiatorInitNotification({ user, shareUrl })
     return PeerInitNotification(user)
   }
 
-  render() {
+  render () {
     const { classes, sending, messages, notifications } = this.props
     return (
       <Wrapper>

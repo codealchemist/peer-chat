@@ -1,5 +1,9 @@
+import * as process from 'process'
 import SimplePeer from 'simple-peer'
 window.SimplePeer = SimplePeer
+window.global = window
+window.process = process
+window.Buffer = []
 
 class Peer {
   constructor ({ isInitiator = false, id, signal } = {}) {
