@@ -1,6 +1,6 @@
 {
   "name": "peer-chat",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "author": "Alberto Miranda <b3rt.js@gmail.com>",
   "repository": {
@@ -8,10 +8,11 @@
     "url": "git+https://github.com/codealchemist/peer-chat.git"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build; cp _redirects build",
-    "test": "CI=true react-scripts test --silent --forceExit --updateSnapshot --detectOpenHandles",
-    "test:watch": "react-scripts test",
+    "start": "craco start",
+    "build": "craco build; cp _redirects build",
+    "prebuild": "cd netlify/functions/ably-token-request && npm i",
+    "test": "CI=true craco test --silent --forceExit --updateSnapshot --detectOpenHandles",
+    "test:watch": "craco test",
     "coverage": "jest --coverage",
     "lint": "standard",
     "eject": "react-scripts eject"
@@ -26,7 +27,10 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@craco/craco": "^7.1.0",
     "@material-ui/core": "^3.9.1",
+    "buffer": "^6.0.3",
     "enzyme": "^3.8.0",
     "enzyme-adapter-react-16": "^1.8.0",
     "enzyme-to-json": "^3.3.5",
@@ -37,17 +41,18 @@
     "react-dom": "^16.7.0",
     "react-redux": "^6.0.0",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "2.1.3",
     "redux-devtools-extension": "^2.13.7",
     "redux-mock-store": "^1.5.3",
     "redux-saga": "^1.0.0",
-    "signalhub": "^4.9.0",
-    "simple-peer": "^9.2.1",
-    "standard": "^12.0.1",
+    "standard": "^17.1.0",
     "styled-components": "^4.1.3"
   },
   "dependencies": {
-    "serve": "^10.1.1"
+    "ably": "^1.2.48",
+    "process": "^0.11.10",
+    "react-scripts": "^5.0.1",
+    "serve": "^10.1.1",
+    "simple-peer": "^9.11.1"
   },
   "standard": {
     "ignore": [

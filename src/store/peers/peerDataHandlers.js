@@ -21,18 +21,20 @@ function * message (data) {
   yield put(addMessage(message))
 }
 
+// eslint-disable-next-line camelcase
 function * writing_notification (data) {
   console.log('-- WRITING NOTIFICATION', data)
   yield put(addWritingNotification(data))
 }
 
+// eslint-disable-next-line camelcase
 function * clear_writing_notification (data) {
   console.log('-- CLEAR WRITING NOTIFICATION', data)
   yield put(removeWritingNotification(data))
 }
 
 export default {
-  message,
-  writing_notification,
+  message, // eslint-disable-next-line camelcase
+  writing_notification, // eslint-disable-next-line camelcase
   clear_writing_notification
 }

@@ -34,7 +34,7 @@ export class AvatarSelector extends React.PureComponent {
     this.closeModal()
   }
 
-  render() {
+  render () {
     const { classes, avatar } = this.props
     return (
       <>

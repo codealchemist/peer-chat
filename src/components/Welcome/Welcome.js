@@ -38,7 +38,7 @@ class Welcome extends React.PureComponent {
     openingChat: false
   }
 
-  componentDidMount() {
+  componentDidMount () {
     this.props.setUserId({ id: this.userId })
   }
 
@@ -58,7 +58,7 @@ class Welcome extends React.PureComponent {
     this.createChat()
   }
 
-  render() {
+  render () {
     const { classes } = this.props
     return (
       <StyledCard className={classes.card}>

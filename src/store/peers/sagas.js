@@ -17,6 +17,10 @@ import {
 import Peer from 'services/peer'
 import { createRemotePeerChannelHandlers } from './channelHandlers'
 
+function log () {
+  console.log('[ PEER SAGA ]:', ...arguments)
+}
+
 export function getRemotePeerEventChannel (remotePeer) {
   return eventChannel(emitter => {
     remotePeer
@@ -30,19 +34,19 @@ export function getRemotePeerEventChannel (remotePeer) {
         emitter({ type: 'connect' })
       })
       .onError(error => {
-        console.log('Got ERROR from Peer:', error)
+        log('Got ERROR from Peer:', error)
         emitter({ type: 'error', data: error })
       })
 
     return () => {
-      console.log('Channel unsubscribe.')
+      log('Channel unsubscribe.')
     }
   })
 }
 
 export function * createRemotePeer ({ payload }) {
   try {
-    console.log('create remote peer', payload)
+    log('create remote peer', payload)
     const { signal, id } = payload
     const peer = yield select(getPeer)
     peer.connect(signal)
@@ -54,19 +58,19 @@ export function * createRemotePeer ({ payload }) {
     try {
       while (true) {
         const { type, data } = yield take(channel)
-        console.log(
-          `[ REMOTE PEER ]: GOT "${type}" DATA from EVENT CHANNEL:`,
+        log(
+          `[ REMOTE PEER ]: (${id}) GOT "${type}" DATA from EVENT CHANNEL:`,
           data
         )
 
         if (!(type in createRemotePeerChannelHandlers)) {
-          console.log('There is no handler for remote peer data type:', type)
+          log(`(${id}) There is no handler for remote peer data type: ${type}`)
           return
         }
         yield createRemotePeerChannelHandlers[type]({ data, storedSignal })
       }
     } catch (e) {
-      console.log('[ REMOTE PEER ]: Event channel error', e)
+      log(`[ REMOTE PEER ]: (${id}) Event channel error`, e)
     }
 
     yield put(createRemotePeerSuccess({ peer: 'TODO' }))
@@ -82,23 +86,23 @@ export function getLocalPeerEventChannel (localPeer) {
         emitter({ type: 'signal', data: signal })
       })
       .onData(data => {
-        console.log('Got DATA from Peer:', data)
+        log('Got DATA from Peer:', data)
         emitter({ type: 'data', data })
       })
       .onError(error => {
-        console.log('Got ERROR from Peer:', error)
+        log('Got ERROR from Peer:', error)
         emitter({ type: 'error', data: error })
       })
 
     return () => {
-      console.log('Channel unsubscribe.')
+      log('Channel unsubscribe.')
     }
   })
 }
 
 export function * createLocalPeer ({ payload }) {
   try {
-    console.log('create local peer', payload)
+    log('create local peer', payload)
     const localPeer = new Peer({
       id: payload.id,
       isInitiator: payload.isInitiator
@@ -112,7 +116,7 @@ export function * createLocalPeer ({ payload }) {
     try {
       while (true) {
         const { type, data } = yield take(channel)
-        console.log(
+        log(
           `[ LOCAL PEER ]: GOT "${type}" DATA from EVENT CHANNEL:`,
           data
         )
@@ -125,19 +129,19 @@ export function * createLocalPeer ({ payload }) {
             // TODO
           },
           error: function * (data) {
-            console.log('got error from localPeer event channel', data)
+            log('got error from localPeer event channel', data)
             // TODO
           }
         }
 
         if (!(type in handlers)) {
-          console.log('There is no handler for remote peer data type:', type)
+          log('There is no handler for remote peer data type:', type)
           return
         }
         yield handlers[type](data)
       }
     } catch (e) {
-      console.log('Event channel error', e)
+      log('Event channel error', e)
     }
   } catch (e) {
     yield put(createLocalPeerFailed({ error: e.message || 'Unknown error.' }))
@@ -145,7 +149,7 @@ export function * createLocalPeer ({ payload }) {
 }
 
 export function * sendMessage ({ payload }) {
-  console.log('PEER Saga: send message', payload)
+  log('PEER Saga: send message', payload)
   const peer = yield select(getPeer)
   peer.send({
     type: 'message',
@@ -154,7 +158,7 @@ export function * sendMessage ({ payload }) {
 }
 
 export function * sendWritingNotification ({ payload }) {
-  console.log('PEER Saga: send writing notification', payload)
+  log('PEER Saga: send writing notification', payload)
   const peer = yield select(getPeer)
   peer.send({
     type: 'writing_notification',
@@ -163,7 +167,7 @@ export function * sendWritingNotification ({ payload }) {
 }
 
 export function * sendClearWritingNotification ({ payload }) {
-  console.log('PEER Saga: send clear writing notification', payload)
+  log('PEER Saga: send clear writing notification', payload)
   const peer = yield select(getPeer)
   peer.send({
     type: 'clear_writing_notification',
@@ -172,7 +176,7 @@ export function * sendClearWritingNotification ({ payload }) {
 }
 
 export default function * signalingSagas () {
-  console.log('peers saga')
+  log('peers saga')
   yield takeEvery(INIT_SUCCESS, createLocalPeer)
   yield takeEvery(GOT_REMOTE_SIGNAL, createRemotePeer)
   yield takeEvery(SEND_MESSAGE, sendMessage)

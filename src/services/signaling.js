@@ -1,6 +1,9 @@
-import signalhub from 'signalhub'
 import nanoid from 'nanoid'
+import { Realtime } from 'ably'
 
+function log () {
+  console.log('[ Signaling ]', ...arguments)
+}
 class Signaling {
   constructor () {
     this.baseUrl = `${window.location.protocol}//${window.location.host}`
@@ -8,6 +11,12 @@ class Signaling {
     this.initiatorId = this.getInitiatorId()
     this.isInitiator = !this.initiatorId
     this.onErrorCallback = null
+    this.isConnected = false
+
+    this.client = new Realtime({
+      authUrl: `${this.baseUrl}/.netlify/functions/ably-token-request?clientId=${this.id}`,
+      echoMessages: false
+    })
 
     // Set sharing URL only when not connecting to an initiator.
     // The initiator creates sharing.
@@ -28,24 +37,42 @@ class Signaling {
     console.log('INITIATOR ID:', this.initiatorId)
     this.channelName = this.initiatorId || this.id
     console.log('CHANNEL', this.channelName)
-    this.hub = signalhub('peer-chat', [
-      'https://peer-chat-signalhub.herokuapp.com'
-    ])
-    this.hub
-      .subscribe(this.channelName)
-      .on('data', message => this.onSignalMessage(message))
+
+    this.channelId = this.initiatorId || this.id
+    this.connect().setEvents()
 
     // If not the initiator, request offer to initiator.
     if (!this.isInitiator) {
       console.log('Signaling: SEND REQUEST MSG')
-      this.hub.broadcast(this.channelName, { id: this.id, type: 'request' })
+      this.send({ id: this.id, type: 'request' })
     }
 
     return this
   }
 
+  connect () {
+    this.channel = this.client.channels.get(this.channelId)
+    return this
+  }
+
+  setEvents () {
+    this.client.connection.on('connected', () => {
+      log('Connected to ably!')
+      this.isConnected = true
+    })
+
+    this.client.connection.on('failed', () => {
+      log('Connection to ably failed')
+    })
+
+    this.channel.subscribe('message', (raw) => {
+      const { data } = raw
+      this.onSignalMessage(data)
+    })
+  }
+
   onSignalMessage (message) {
-    console.log('new message received', message)
+    log('new message received', message)
     const { signal, id, type } = message || {}
 
     // Ignore own messages.
@@ -54,11 +81,8 @@ class Signaling {
     // Only the initiator will answer with offers to other peers.
     // Send offer using signaling channel.
     if (this.isInitiator && type === 'request') {
-      this.hub.broadcast(this.channelName, {
-        id: this.id,
-        type: 'offer',
-        signal: this.signal
-      })
+      log('Signaling: SEND OFFER MSG')
+      this.send({ id: this.id, type: 'offer', signal: this.signal })
       return
     }
 
@@ -72,10 +96,15 @@ class Signaling {
   }
 
   send (message) {
-    this.hub.broadcast(this.channelName, {
-      id: this.id,
-      ...message
-    })
+    // Wait for connection.
+    if (!this.isConnected) {
+      log('Wait for socket connection...')
+      setTimeout(() => this.send(message), 250)
+      return
+    }
+
+    this.channel.publish('message', message)
+    return this
   }
 
   onRemoteSignal (callback) {
