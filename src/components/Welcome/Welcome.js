@@ -59,7 +59,7 @@ class Welcome extends React.PureComponent {
   }
 
   render () {
-    const { classes } = this.props
+    const { classes, location } = this.props
     return (
       <StyledCard className={classes.card}>
         <CardContent>
@@ -96,7 +96,7 @@ class Welcome extends React.PureComponent {
                 disabled={!this.state.name.trim() || this.state.openingChat}
                 onClick={this.createChat}
               >
-                Create chat
+                { location?.hash !== '' ? 'Join chat' : 'Create chat' }
               </Button>
               {this.state.openingChat && (
                 <CircularProgress
